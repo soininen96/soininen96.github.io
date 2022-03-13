@@ -1,0 +1,191 @@
+body {
+  background: url("kirjasto/muutkuvatjavideot/Taustakuvat/vaalea.jpg") no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  overflow-x: hidden;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.sisalto {
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 20px;
+
+  padding-bottom: 200px;
+}
+
+h1 {
+  color: blue;
+  font-size: 4em;
+  padding-top: 0.5em;
+  font-style: italic;
+}
+
+h2 {
+  color: blue;
+  font-size: 3em;
+  padding-top: 0.5em;
+  text-decoration: underline;
+}
+
+h6 {
+  font-size: 1.1em;
+  padding-top: 3em;
+}
+
+p {
+  color: black;
+  font-size: 1.4em;
+}
+
+.boxDark {
+  height: 100%;
+  width: 100%;
+}
+
+.boxLight {
+  background-image: url("kirjasto/muutkuvatjavideot/Taustakuvat/vaalea.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.boxDark {
+  background-image: url("kirjasto/muutkuvatjavideot/Taustakuvat/tumma.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-custom {
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 150px;
+}
+
+.bg-white {
+  margin-top: 150px;
+  margin-bottom: 20px;
+  margin-left: 400px;
+  margin-right: 300px;
+}
+
+#etusivuTeksti {
+  padding-left: 150px;
+  padding-right: 150px;
+  text-overflow: none;
+}
+
+.containerFluid {
+  background-image: url("kirjasto/muutkuvatjavideot/Taustakuvat/vaalea.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* The sidebar menu */
+.sidebar {
+  height: 80%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 0; /* Stay on top */
+  top: 1;
+  left: 0;
+  bottom: 0;
+  background-color: rgb(255, 250, 250, 0.9); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 30px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #333333;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #1e10d6;
+  background-color: rgb(225, 225, 225);
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 50px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  margin-top: 25px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: rgb(225, 225, 225);
+}
+
+video {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .sivukuva {
+    width: 300px;
+    height: 100px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .sivukuva {
+    width: 500px;
+    height: 175px;
+  }
+}
+/* Vaihdettavan kuvan m��ritykset pienille laitteille (tabletit ja suuret puhelimet, > 600 pikseli�). */
+@media only screen and (min-width: 1350px) {
+  .sivukuva {
+    width: 700px;
+    height: 250px;
+  }
+}
+
+/* Vaihdettavan kuvan m��ritykset suurille laitteille (pienemm�t tietokonen�yt�t, > 992 pikseli�). */
+@media only screen and (min-width: 1600px) {
+  .sivukuva {
+    width: 900px;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .sivukuva {
+    width: 1200px;
+    height: 400px;
+  }
+}
