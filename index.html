@@ -56,91 +56,31 @@
           "background-color:rgba(215,215,215)";
       }
 
-      function korostaValittu(indeksi) {
-        if (indeksi == 0) {
-          document.getElementById("0").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("0").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 1) {
-          document.getElementById("1").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("1").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 2) {
-          document.getElementById("2").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("2").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 3) {
-          document.getElementById("3").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("3").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 4) {
-          document.getElementById("4").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("4").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 5) {
-          document.getElementById("5").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("5").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 6) {
-          document.getElementById("6").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("6").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 7) {
-          document.getElementById("7").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("7").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 8) {
-          document.getElementById("8").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("8").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 9) {
-          document.getElementById("9").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("9").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 10) {
-          document.getElementById("10").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("10").style =
-            "background-color:rgba(255, 250, 250)";
-        }
-        if (indeksi == 11) {
-          document.getElementById("11").style =
-            "background-color:rgba(215,215,215)";
-        } else {
-          document.getElementById("11").style =
-            "background-color:rgba(255, 250, 250)";
-        }
+      function poistaKorostus() {
+        document.getElementById("0").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("1").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("2").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("3").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("4").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("5").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("6").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("7").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("8").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("9").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("10").style =
+          "background-color:rgba(255, 250, 250)";
+        document.getElementById("11").style =
+          "background-color:rgba(255, 250, 250)";
       }
 
       function openCloseNav() {
@@ -198,113 +138,78 @@
       }
 
       var textChange = function (index) {
+        poistaKorostus();
         if (index == 0) {
           document.getElementById("demo").innerHTML = etusivuHTML;
           document.getElementById("0").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("0").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 1) {
           document.getElementById("demo").innerHTML = kinnunenHTML;
           document.getElementById("1").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("1").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 2) {
           document.getElementById("demo").innerHTML = mikkoHTML;
           document.getElementById("2").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("2").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 3) {
           document.getElementById("demo").innerHTML = kekeHTML;
           document.getElementById("3").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("3").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 4) {
           document.getElementById("demo").innerHTML = jyrkiHTML;
           document.getElementById("4").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("4").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 5) {
           document.getElementById("demo").innerHTML = hakkinenHTML;
           document.getElementById("5").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("5").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 6) {
           document.getElementById("demo").innerHTML = saloHTML;
           document.getElementById("6").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("6").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 7) {
           document.getElementById("demo").innerHTML = kimiHTML;
           document.getElementById("7").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("7").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 8) {
           document.getElementById("demo").innerHTML = heikkiHTML;
           document.getElementById("8").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("8").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 9) {
           document.getElementById("demo").innerHTML = bottasHTML;
           document.getElementById("9").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("9").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 10) {
           document.getElementById("demo").innerHTML = kissaHTML;
           document.getElementById("10").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("10").style =
-            "background-color:rgba(255, 250, 250)";
         }
         if (index == 11) {
           document.getElementById("demo").innerHTML = yhteystiedotHTML;
           document.getElementById("11").style =
             "background-color:rgba(215,215,215)";
           closeNav();
-        } else {
-          document.getElementById("11").style =
-            "background-color:rgba(255, 250, 250)";
         }
       };
 
