@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      content="width=device-width, initial-scale=0.9, maximum-scale=1.0, user-scalable=0"
     />
 
     <!--bootstrap linkitykset-->
@@ -34,24 +34,113 @@
       </div>
 
       <div id="mySidebar" class="sidebar">
-        <a href="#" onclick="textChange(0)">Etusivu</a>
-        <a href="#" onclick="textChange(1)">Leo Kinnunen</a>
-        <a href="#" onclick="textChange(2)">Mikko Kozarowitzky</a>
-        <a href="#" onclick="textChange(3)">Keke Rosberg</a>
-        <a href="#" onclick="textChange(4)">Jyrki Järvilehto</a>
-        <a href="#" onclick="textChange(5)">Mika Häkkinen</a>
-        <a href="#" onclick="textChange(6)">Mika Salo</a>
-        <a href="#" onclick="textChange(7)">Kimi Räikkönen</a>
-        <a href="#" onclick="textChange(8)">Heikki Kovalainen</a>
-        <a href="#" onclick="textChange(9)">Valtteri Bottas</a>
-        <a href="#" onclick="textChange(10)">Kissavideo</a>
-        <a href="#" onclick="textChange(11)">Yhteystiedot</a>
+        <a href="#" id="0" onclick="textChange(0);">Etusivu</a>
+        <a href="#" id="1" onclick="textChange(1);">Leo Kinnunen</a>
+        <a href="#" id="2" onclick="textChange(2);">Mikko Kozarowitzky</a>
+        <a href="#" id="3" onclick="textChange(3);">Keke Rosberg</a>
+        <a href="#" id="4" onclick="textChange(4);">Jyrki Järvilehto</a>
+        <a href="#" id="5" onclick="textChange(5);">Mika Häkkinen</a>
+        <a href="#" id="6" onclick="textChange(6);">Mika Salo</a>
+        <a href="#" id="7" onclick="textChange(7);">Kimi Räikkönen</a>
+        <a href="#" id="8" onclick="textChange(8);">Heikki Kovalainen</a>
+        <a href="#" id="9" onclick="textChange(9);">Valtteri Bottas</a>
+        <a href="#" id="10" onclick="textChange(10);">Kissavideo</a>
+        <a href="#" id="11" onclick="textChange(11);">Yhteystiedot</a>
       </div>
     </div>
 
     <script>
       function LoadInitialContent() {
         document.getElementById("demo").innerHTML = etusivuHTML;
+        document.getElementById("0").style =
+          "background-color:rgba(215,215,215)";
+      }
+
+      function korostaValittu(indeksi) {
+        if (indeksi == 0) {
+          document.getElementById("0").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("0").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 1) {
+          document.getElementById("1").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("1").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 2) {
+          document.getElementById("2").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("2").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 3) {
+          document.getElementById("3").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("3").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 4) {
+          document.getElementById("4").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("4").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 5) {
+          document.getElementById("5").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("5").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 6) {
+          document.getElementById("6").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("6").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 7) {
+          document.getElementById("7").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("7").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 8) {
+          document.getElementById("8").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("8").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 9) {
+          document.getElementById("9").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("9").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 10) {
+          document.getElementById("10").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("10").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (indeksi == 11) {
+          document.getElementById("11").style =
+            "background-color:rgba(215,215,215)";
+        } else {
+          document.getElementById("11").style =
+            "background-color:rgba(255, 250, 250)";
+        }
       }
 
       function openCloseNav() {
@@ -64,6 +153,11 @@
           document.getElementById("main").style.marginLeft = "0";
           onAuki = false;
         }
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
       }
 
       function vaihdaPadding() {
@@ -106,40 +200,111 @@
       var textChange = function (index) {
         if (index == 0) {
           document.getElementById("demo").innerHTML = etusivuHTML;
-          document.getElementById("BrCr").innerHTML = indexBrCrHTML;
-        } else if (index == 1) {
+          document.getElementById("0").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("0").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 1) {
           document.getElementById("demo").innerHTML = kinnunenHTML;
-          document.getElementById("BrCr").innerHTML = showreelBrCrHTML;
-        } else if (index == 2) {
+          document.getElementById("1").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("1").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 2) {
           document.getElementById("demo").innerHTML = mikkoHTML;
-          document.getElementById("BrCr").innerHTML = resourcesBrCrHTML;
-        } else if (index == 3) {
+          document.getElementById("2").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("2").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 3) {
           document.getElementById("demo").innerHTML = kekeHTML;
-          document.getElementById("BrCr").innerHTML = resourcesBrCrHTML;
-        } else if (index == 4) {
+          document.getElementById("3").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("3").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 4) {
           document.getElementById("demo").innerHTML = jyrkiHTML;
-          document.getElementById("BrCr").innerHTML = resourcesBrCrHTML;
-        } else if (index == 5) {
+          document.getElementById("4").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("4").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 5) {
           document.getElementById("demo").innerHTML = hakkinenHTML;
-          document.getElementById("BrCr").innerHTML = resourcesBrCrHTML;
-        } else if (index == 6) {
+          document.getElementById("5").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("5").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 6) {
           document.getElementById("demo").innerHTML = saloHTML;
-          document.getElementById("BrCr").innerHTML = resourcesBrCrHTML;
-        } else if (index == 7) {
+          document.getElementById("6").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("6").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 7) {
           document.getElementById("demo").innerHTML = kimiHTML;
-          document.getElementById("BrCr").innerHTML = resourcesBrCrHTML;
-        } else if (index == 8) {
+          document.getElementById("7").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("7").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 8) {
           document.getElementById("demo").innerHTML = heikkiHTML;
-          document.getElementById("BrCr").innerHTML = resourcesBrCrHTML;
-        } else if (index == 9) {
+          document.getElementById("8").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("8").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 9) {
           document.getElementById("demo").innerHTML = bottasHTML;
-          document.getElementById("BrCr").innerHTML = resourcesBrCrHTML;
-        } else if (index == 10) {
+          document.getElementById("9").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("9").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 10) {
           document.getElementById("demo").innerHTML = kissaHTML;
-          document.getElementById("BrCr").innerHTML = resourcesBrCrHTML;
-        } else if (index == 11) {
+          document.getElementById("10").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("10").style =
+            "background-color:rgba(255, 250, 250)";
+        }
+        if (index == 11) {
           document.getElementById("demo").innerHTML = yhteystiedotHTML;
-          document.getElementById("BrCr").innerHTML = resourcesBrCrHTML;
+          document.getElementById("11").style =
+            "background-color:rgba(215,215,215)";
+          closeNav();
+        } else {
+          document.getElementById("11").style =
+            "background-color:rgba(255, 250, 250)";
         }
       };
 
