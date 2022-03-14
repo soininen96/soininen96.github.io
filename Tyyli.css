@@ -35,6 +35,14 @@ h2 {
   text-decoration: underline;
 }
 
+h3 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
 h6 {
   font-size: 1.1em;
   padding-top: 3em;
@@ -50,21 +58,46 @@ p {
   width: 100%;
 }
 
-.boxLight {
-  background-image: url("kirjasto/muutkuvatjavideot/Taustakuvat/vaalea.jpg");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
+.img1 {
+  width: 145px;
+  height: 95px;
+  padding-bottom: 30px;
 }
 
-.boxDark {
-  background-image: url("kirjasto/muutkuvatjavideot/Taustakuvat/tumma.jpg");
+.img2 {
+  width: 120px;
+  height: 60px;
+}
 
-  background-repeat: no-repeat;
-  background-position: center;
+.img3 {
+  width: 120px;
+  height: 60px;
+}
+
+.sivukuva {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 5px ridge rgb(180, 180, 180);
+  border-top: 3px ridge rgb(180, 180, 180);
+}
+
+.profiilikuva {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 20px;
+  border: 5px double black;
+}
+.profiilikuva1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 20px;
+  border: 5px double black;
 }
 
 .bg-custom {
@@ -79,9 +112,17 @@ p {
   margin-right: 300px;
 }
 
+.bg-light {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
 #etusivuTeksti {
   padding-left: 150px;
   padding-right: 150px;
+  padding-bottom: 50px;
   text-overflow: none;
 }
 
@@ -104,9 +145,10 @@ p {
   top: 1;
   left: 0;
   bottom: 0;
-  background-color: rgb(255, 250, 250, 0.9); /* Black*/
+  border-top-right-radius: 5px;
+  background-color: rgb(255, 250, 250, 0.98); /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 30px; /* Place content 60px from the top */
+  padding-top: 15px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 
@@ -120,13 +162,11 @@ p {
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
   color: #1e10d6;
   background-color: rgb(225, 225, 225);
 }
 
-/* The button used to open the sidebar */
 .openbtn {
   font-size: 50px;
   cursor: pointer;
@@ -146,7 +186,13 @@ video {
   height: auto !important;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+.embed-responsive-item {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 @media screen and (max-height: 450px) {
   .sidebar {
     padding-top: 15px;
@@ -156,10 +202,19 @@ video {
   }
 }
 
+/*kuvien kokojen vaihtoa*/
 @media only screen and (max-width: 700px) {
   .sivukuva {
+    width: 420px;
+    height: 140px;
+  }
+  .profiilikuva {
     width: 300px;
-    height: 100px;
+    height: 250px;
+  }
+  .profiilikuva1 {
+    width: 410px;
+    height: 250px;
   }
 }
 @media only screen and (min-width: 700px) {
@@ -167,25 +222,95 @@ video {
     width: 500px;
     height: 175px;
   }
+  .profiilikuva {
+    width: 330px;
+    height: 280px;
+  }
+  .profiilikuva1 {
+    width: 440px;
+    height: 280px;
+  }
 }
-/* Vaihdettavan kuvan m��ritykset pienille laitteille (tabletit ja suuret puhelimet, > 600 pikseli�). */
+
 @media only screen and (min-width: 1350px) {
   .sivukuva {
     width: 700px;
     height: 250px;
   }
+  .profiilikuva {
+    width: 380px;
+    height: 320px;
+  }
+  .profiilikuva1 {
+    width: 490px;
+    height: 320px;
+  }
 }
 
-/* Vaihdettavan kuvan m��ritykset suurille laitteille (pienemm�t tietokonen�yt�t, > 992 pikseli�). */
 @media only screen and (min-width: 1600px) {
   .sivukuva {
     width: 900px;
     height: 300px;
+  }
+  .profiilikuva {
+    width: 430px;
+    height: 380px;
+  }
+  .profiilikuva1 {
+    width: 540px;
+    height: 380px;
   }
 }
 @media only screen and (min-width: 1900px) {
   .sivukuva {
     width: 1200px;
     height: 400px;
+  }
+  .profiilikuva {
+    width: 480px;
+    height: 430px;
+  }
+  .profiilikuva1 {
+    width: 590px;
+    height: 430px;
+  }
+}
+
+/*sisältö tekstien sovittamista*/
+@media only screen and (max-width: 700px) {
+  #etusivuTeksti {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  #etusivuTeksti {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 50px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #etusivuTeksti {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  #etusivuTeksti {
+    padding-left: 125px;
+    padding-right: 125px;
+    padding-bottom: 50px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #etusivuTeksti {
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px;
   }
 }
