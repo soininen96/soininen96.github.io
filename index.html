@@ -500,6 +500,15 @@
       }
 
       function vaihdaKieliSuomeksi() {
+        if (window.outerWidth > 1550) {
+          document.getElementById("ylapalkki").innerHTML = laajaylapalkkiHTML;
+        }
+        if (window.outerWidth < 1550) {
+          document.getElementById("ylapalkki").innerHTML = keskiylapalkkiHTML;
+        }
+        if (window.outerWidth < 1000) {
+          document.getElementById("ylapalkki").innerHTML = kapeaylapalkkiHTML;
+        }
         kieli = "suomi";
         document.getElementById("0").innerHTML = "Etusivu";
         document.getElementById("1").innerHTML = "Leo Kinnunen";
@@ -516,6 +525,15 @@
         textChange(indeksiKopio);
       }
       function vaihdaKieliEnglanniksi() {
+        if (window.outerWidth > 1550) {
+          document.getElementById("ylapalkki").innerHTML = laajaylapalkkiHTMLen;
+        }
+        if (window.outerWidth < 1550) {
+          document.getElementById("ylapalkki").innerHTML = keskiylapalkkiHTMLen;
+        }
+        if (window.outerWidth < 1000) {
+          document.getElementById("ylapalkki").innerHTML = kapeaylapalkkiHTMLen;
+        }
         kieli = "englanti";
         document.getElementById("0").innerHTML = "Home";
         document.getElementById("1").innerHTML = "Leo Kinnunen";
