@@ -19,7 +19,7 @@
     <script src="kirjasto/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
 
     <!--oma tyylitiedosto-->
-    <link rel="stylesheet" href="Tyyli.css" />
+    <link rel="stylesheet" id="tyylitiedosto" href="Tyyli.css" />
   </head>
 
   <body
@@ -50,37 +50,71 @@
     </div>
 
     <script>
+      var kieli = "suomi";
+      var teema = "vaalea";
+      var indeksiKopio = 0;
       function LoadInitialContent() {
         document.getElementById("demo").innerHTML = etusivuHTML;
         document.getElementById("0").style =
-          "background-color:rgba(215,215,215)";
+          "background-color:rgba(210,210,210)";
+        document.getElementById("0").style.color = "rgba(0, 75, 255)";
       }
 
       function poistaKorostus() {
-        document.getElementById("0").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("1").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("2").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("3").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("4").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("5").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("6").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("7").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("8").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("9").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("10").style =
-          "background-color:rgba(255, 250, 250)";
-        document.getElementById("11").style =
-          "background-color:rgba(255, 250, 250)";
+        switch (teema) {
+          case "vaalea":
+            document.getElementById("0").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("1").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("2").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("3").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("4").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("5").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("6").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("7").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("8").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("9").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("10").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            document.getElementById("11").style =
+              "background-color:rgba(255, 250, 250) transparency = 0.96";
+            break;
+          case "tumma":
+            document.getElementById("0").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("1").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("2").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("3").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("4").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("5").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("6").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("7").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("8").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("9").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("10").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            document.getElementById("11").style =
+              "background-color:rgba(13, 13, 13) transparency = 0.96";
+            break;
+        }
       }
 
       function openCloseNav() {
@@ -140,94 +174,376 @@
       var textChange = function (index) {
         poistaKorostus();
         if (index == 0) {
-          document.getElementById("demo").innerHTML = etusivuHTML;
-          document.getElementById("0").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 0;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = etusivuHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = etusivuHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("0").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("0").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("0").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("0").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 1) {
-          document.getElementById("demo").innerHTML = kinnunenHTML;
-          document.getElementById("1").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 1;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = kinnunenHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = kinnunenHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("1").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("1").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("1").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("1").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 2) {
-          document.getElementById("demo").innerHTML = mikkoHTML;
-          document.getElementById("2").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 2;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = mikkoHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = mikkoHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("2").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("2").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("2").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("2").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 3) {
-          document.getElementById("demo").innerHTML = kekeHTML;
-          document.getElementById("3").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 3;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = kekeHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = kekeHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("3").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("3").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("3").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("3").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 4) {
-          document.getElementById("demo").innerHTML = jyrkiHTML;
-          document.getElementById("4").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 4;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = jyrkiHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = jyrkiHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("4").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("4").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("4").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("4").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 5) {
-          document.getElementById("demo").innerHTML = hakkinenHTML;
-          document.getElementById("5").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 5;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = hakkinenHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = hakkinenHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("5").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("5").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("5").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("5").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 6) {
-          document.getElementById("demo").innerHTML = saloHTML;
-          document.getElementById("6").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 6;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = saloHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = saloHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("6").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("6").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("6").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("6").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 7) {
-          document.getElementById("demo").innerHTML = kimiHTML;
-          document.getElementById("7").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 7;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = kimiHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = kimiHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("7").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("7").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("7").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("7").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 8) {
-          document.getElementById("demo").innerHTML = heikkiHTML;
-          document.getElementById("8").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 8;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = heikkiHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = heikkiHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("8").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("8").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("8").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("8").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 9) {
-          document.getElementById("demo").innerHTML = bottasHTML;
-          document.getElementById("9").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 9;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = bottasHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = bottasHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("9").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("9").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("9").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("9").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 10) {
-          document.getElementById("demo").innerHTML = kissaHTML;
-          document.getElementById("10").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 10;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = kissaHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = kissaHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("10").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("10").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("10").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("10").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
         if (index == 11) {
-          document.getElementById("demo").innerHTML = yhteystiedotHTML;
-          document.getElementById("11").style =
-            "background-color:rgba(215,215,215)";
-          closeNav();
+          indeksiKopio = 11;
+          if (kieli == "suomi") {
+            document.getElementById("demo").innerHTML = yhteystiedotHTML;
+          }
+          if (kieli == "englanti") {
+            document.getElementById("demo").innerHTML = yhteystiedotHTMLen;
+          }
+          switch (teema) {
+            case "vaalea":
+              document.getElementById("11").style =
+                "background-color:rgba(210,210,210)";
+              document.getElementById("11").style.color = "rgba(0, 75, 255)";
+              closeNav();
+              break;
+            case "tumma":
+              document.getElementById("11").style =
+                "background-color:rgba(30,30,30)";
+              document.getElementById("11").style.color = "rgba(0, 94, 255)";
+              closeNav();
+              break;
+          }
         }
       };
 
       function palkkiChange() {
-        if (window.outerWidth > 1550) {
-          document.getElementById("ylapalkki").innerHTML = laajaylapalkkiHTML;
-        }
-        if (window.outerWidth < 1550) {
-          document.getElementById("ylapalkki").innerHTML = keskiylapalkkiHTML;
-        }
-        if (window.outerWidth < 1000) {
-          document.getElementById("ylapalkki").innerHTML = kapeaylapalkkiHTML;
+        switch (kieli) {
+          case "suomi":
+            if (window.outerWidth > 1550) {
+              document.getElementById("ylapalkki").innerHTML =
+                laajaylapalkkiHTML;
+            }
+            if (window.outerWidth < 1550) {
+              document.getElementById("ylapalkki").innerHTML =
+                keskiylapalkkiHTML;
+            }
+            if (window.outerWidth < 1000) {
+              document.getElementById("ylapalkki").innerHTML =
+                kapeaylapalkkiHTML;
+            }
+            break;
+          case "englanti":
+            if (window.outerWidth > 1550) {
+              document.getElementById("ylapalkki").innerHTML =
+                laajaylapalkkiHTMLen;
+            }
+            if (window.outerWidth < 1550) {
+              document.getElementById("ylapalkki").innerHTML =
+                keskiylapalkkiHTMLen;
+            }
+            if (window.outerWidth < 1000) {
+              document.getElementById("ylapalkki").innerHTML =
+                kapeaylapalkkiHTMLen;
+            }
+            break;
         }
       }
 
+      function vaihdaTeema() {
+        switch (teema) {
+          case "tumma":
+            document.getElementById("tyylitiedosto").href = "Tyyli.css";
+            teema = "vaalea";
+            textChange(indeksiKopio);
+            break;
+          case "vaalea":
+            document.getElementById("tyylitiedosto").href = "TyyliTumma.css";
+            teema = "tumma";
+            textChange(indeksiKopio);
+            break;
+        }
+      }
+
+      function vaihdaKieliSuomeksi() {
+        kieli = "suomi";
+        document.getElementById("0").innerHTML = "Etusivu";
+        document.getElementById("1").innerHTML = "Leo Kinnunen";
+        document.getElementById("2").innerHTML = "Mikko Kozarowitzky";
+        document.getElementById("3").innerHTML = "Keke Rosberg";
+        document.getElementById("4").innerHTML = "Jyrki Järvilehto";
+        document.getElementById("5").innerHTML = "Mika Häkkinen";
+        document.getElementById("6").innerHTML = "Mika Salo";
+        document.getElementById("7").innerHTML = "Kimi Räikkönen";
+        document.getElementById("8").innerHTML = "Heikki Kovalainen";
+        document.getElementById("9").innerHTML = "Valtteri Bottas";
+        document.getElementById("10").innerHTML = "Kissavideo";
+        document.getElementById("11").innerHTML = "Yhteystiedot";
+        textChange(indeksiKopio);
+      }
+      function vaihdaKieliEnglanniksi() {
+        kieli = "englanti";
+        document.getElementById("0").innerHTML = "Home";
+        document.getElementById("1").innerHTML = "Leo Kinnunen";
+        document.getElementById("2").innerHTML = "Mikko Kozarowitzky";
+        document.getElementById("3").innerHTML = "Keke Rosberg";
+        document.getElementById("4").innerHTML = "Jyrki Järvilehto";
+        document.getElementById("5").innerHTML = "Mika Häkkinen";
+        document.getElementById("6").innerHTML = "Mika Salo";
+        document.getElementById("7").innerHTML = "Kimi Räikkönen";
+        document.getElementById("8").innerHTML = "Heikki Kovalainen";
+        document.getElementById("9").innerHTML = "Valtteri Bottas";
+        document.getElementById("10").innerHTML = "Cat video";
+        document.getElementById("11").innerHTML = "Contact";
+        textChange(indeksiKopio);
+      }
+
       var etusivuHTML =
-        '<div class="col-sm-10 bg-light">\
-      	<div>\<img src="kirjasto/muutkuvatjavideot/suomalaisetvoittajat1.png" class="sivukuva"/><h2 style = "text-align:center;">Tervetuloa!</h2><p id="etusivuTeksti">Tältä sivulta löydät kaikki suomalaiset jotka ovat ajaneet kilpaa Formula 1:ssä. Duis vulputate commodo lectus, ac blandit elit tincidunt id. \
+        '<div class="col-sm-10">\
+      	<div class = "vari">\<img src="kirjasto/muutkuvatjavideot/suomalaisetvoittajat1.png" class="sivukuva"/><h2 style = "text-align:center;">Tervetuloa!</h2><p id="etusivuTeksti">Tältä sivulta löydät kaikki suomalaiset jotka ovat ajaneet kilpaa Formula 1:ssä. Duis vulputate commodo lectus, ac blandit elit tincidunt id. \
+               Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit \
+               amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec \
+               vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus \
+               viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</p></div>\
+      	</div>\
+      </div>';
+      var etusivuHTMLen =
+        '<div class="col-sm-10">\
+      	<div class = "vari">\<img src="kirjasto/muutkuvatjavideot/suomalaisetvoittajat1.png" class="sivukuva"/><h2 style = "text-align:center;">Welcome!</h2><p id="etusivuTeksti">On this page you will find all the Finns who have raced in Formula 1. Duis vulputate commodo lectus, ac blandit elit tincidunt id. \
                Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit \
                amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec \
                vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus \
@@ -235,8 +551,8 @@
       	</div>\
       </div>';
       var kinnunenHTML =
-        '<div class="col-sm-10 p-3 bg-light">\
-      	<div>\<img src="kirjasto/LeoKinnunen/leo.jpg" class="profiilikuva"/><h3>Leo Juhani ”Leksa” Kinnunen (5. elokuuta 1943 Tampere – 26. heinäkuuta 2017)</h3>\
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/LeoKinnunen/leo.jpg" class="profiilikuva"/><h3>Leo Juhani ”Leksa” Kinnunen (5. elokuuta 1943 Tampere – 26. heinäkuuta 2017)</h3>\
                 <p id="etusivuTeksti">Vuonna 1974 AAW Racingin toiminta hiipui, ja Kinnunen päätti lähteä Formula 1 -sarjaan. Hän hankki John Surteesin tallin vanhan testiauton.\
                    Syntyi Suomen toistaiseksi ainoa F1-talli, joka toimi nimellä AAW Racing Team Antti Aarnio-Wihurin suostuttua lainaamaan sille nimensä, mutta varsinainen rahoitus\
                     tuli muun muassa Saloralta ja Colt-tupakkamerkiltä. Tallin koeajot ajettiin Keimolassa. Ylipainoinen ja alitehoinen Surtees-Ford osoittautui kehnoksi autoksi,\
@@ -249,19 +565,35 @@
                            ja hän voitti molemmat lähdöt sijoittuen tällä yhdellä ainoalla osallistumisellaan koko kauden tuloslistalla 6. sijalle. </p></div>\
       	</div>\
       </div>';
+      var kinnunenHTMLen =
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/LeoKinnunen/leo.jpg" class="profiilikuva"/><h3>Leo Juhani ”Leksa” Kinnunen (5. August 1943 Tampere – 26. July 2017)</h3>\
+                <p id="etusivuTeksti">In 1974, AAW Racings activities dwindled and Kinnunen decided to enter the Formula 1 series. He bought an old test car from John Surtees garage. The only F1 team in Finland so far, the AAW Racing Team was born after Antti Aarnio-Wihuri agreed to lend his name to the team, but the actual funding came from Salora and the Colt tobacco brand, among others. The garage was test driven in Keimola. The overweight and underpowered Surtees-Ford proved to be a poor car, a technical problem. In addition, the car had been used as a test bed at the factory and its chassis had suffered damage. Furthermore, the team did not have access to the best possible tyres. However, Kinnunen took part in six GP weekends, only making it to the start line at Anderstorp in Sweden. Kinnunen finished 25th in the time trial and only 24 of the best qualified for the race. However, for PR reasons, Kinnunen was allowed to start outside the race. The Australian Vern Schuppan (26th in the time trial) also started alongside Kinnunen as an outsider. In the race itself, Kinnunens road was cut short on lap 8 by a problem with the spark plug, the car having been filled with fuel for only ten laps due to its very poor reliability. The hard luck car is now on display at the Turun Sanomat Museum. After completing the F1 series, Kinnunen drove the Interseries Hockenheim round in a Martini Racing Porsche 917/30 Turbo and won both races, finishing 6th on the all-season scoreboard with this single entry.</p></div>\
+      	</div>\
+      </div>';
       var mikkoHTML =
-        '<div class="col-sm-10 p-3 bg-light">\
-      	<div>\<img src="kirjasto/MikkoKozarowitzky/mikko.jpg" class="profiilikuva"/><h3>Michael ”Mikko” Kozarowitzky (s. 17. toukokuuta 1948 Helsinki) </h3><h4>Pienet Formula -sarjat</h4><p id="etusivuTeksti">Kozarowitzky aloitti kilpailemisen 20-vuotiaana vuonna 1968 Formula Vee -luokassa käyttäen nimeä Matti Järvi, kansainvälisissä yhteyksissä Matthew Jarvi. Vuonna 1970 hän siirtyi Formula 3 -luokkaan ja ajoi AAW-tallin Titan-autolla, jolla oli edellisenä vuonna ajanut tuleva Suomen ensimmäinen Formula 1 -kuljettaja Leo Kinnunen. Kozarowitzky palasi 1971 takaisin Formula Vee -luokkaan ja voitti luokan Suomen-mestaruuden vuonna 1972. Hän kilpaili samaan aikaan myös Formula Super Vee -luokassa, ja käytti kummassakin luokassa Veemax-autoja. Vuonna 1973 hän jätti kilpailut väliin, mutta ajoi taas Formula Super Vee -luokkaa vuonna 1974. Kozarowitsky siirtyi ammattilaiseksi vuonna 1975 jatkaen kilpailemista Super Vee -luokassa, jossa voitti mestaruuden samana vuonna. Vuonna 1976 Kozarowitzky ajoi Formula 2 -luokassa ATS:n autoja. Samana vuonna hän ajoi myös Uuden-Seelannin Formula Pacific -sarjaa Keke Rosbergin kanssa, jossa sijoittui neljänneksi.</p><h4>Formula 1</h4><p id="etusivuTeksti">Kozarowitzky yritti kahdesti RAM-tallin autolla Formula 1 -kilpailuun kaudella 1977, mutta karsiutui kummallakin kerralla (Ruotsin ja Britannian GP)</p></div>\
+        '<div class="col-sm-10 p-">\
+      	<div class = "vari">\<img src="kirjasto/MikkoKozarowitzky/mikko.jpg" class="profiilikuva"/><h3>Michael ”Mikko” Kozarowitzky (s. 17. toukokuuta 1948 Helsinki) </h3><h4>Pienet Formula -sarjat</h4><p id="etusivuTeksti">Kozarowitzky aloitti kilpailemisen 20-vuotiaana vuonna 1968 Formula Vee -luokassa käyttäen nimeä Matti Järvi, kansainvälisissä yhteyksissä Matthew Jarvi. Vuonna 1970 hän siirtyi Formula 3 -luokkaan ja ajoi AAW-tallin Titan-autolla, jolla oli edellisenä vuonna ajanut tuleva Suomen ensimmäinen Formula 1 -kuljettaja Leo Kinnunen. Kozarowitzky palasi 1971 takaisin Formula Vee -luokkaan ja voitti luokan Suomen-mestaruuden vuonna 1972. Hän kilpaili samaan aikaan myös Formula Super Vee -luokassa, ja käytti kummassakin luokassa Veemax-autoja. Vuonna 1973 hän jätti kilpailut väliin, mutta ajoi taas Formula Super Vee -luokkaa vuonna 1974. Kozarowitsky siirtyi ammattilaiseksi vuonna 1975 jatkaen kilpailemista Super Vee -luokassa, jossa voitti mestaruuden samana vuonna. Vuonna 1976 Kozarowitzky ajoi Formula 2 -luokassa ATS:n autoja. Samana vuonna hän ajoi myös Uuden-Seelannin Formula Pacific -sarjaa Keke Rosbergin kanssa, jossa sijoittui neljänneksi.</p><h4>Formula 1</h4><p id="etusivuTeksti">Kozarowitzky yritti kahdesti RAM-tallin autolla Formula 1 -kilpailuun kaudella 1977, mutta karsiutui kummallakin kerralla (Ruotsin ja Britannian GP)</p></div>\
+      	</div>\
+      </div>';
+      var mikkoHTMLen =
+        '<div class="col-sm-10 p-">\
+      	<div class = "vari">\<img src="kirjasto/MikkoKozarowitzky/mikko.jpg" class="profiilikuva"/><h3>Michael ”Mikko” Kozarowitzky (Born 17. May 1948 Helsinki) </h3><h4>Small Formula series</h4><p id="etusivuTeksti">Kozarowitzky started racing at the age of 20 in 1968 in the Formula Vee class under the name Matti Järvi, internationally known as Matthew Jarvi. In 1970 he moved to Formula 3, driving the AAW Team Titan car, which had been driven the previous year by Leo Kinnunen, Finlands future first Formula 1 driver. Kozarowitzky returned to the Formula Vee class in 1971 and won the Finnish championship in 1972. He also competed in the Formula Super Vee class at the same time, using Veemax cars in both classes. In 1973 he skipped racing, but raced again in the Formula Super Vee class in 1974. Kozarowitsky turned professional in 1975, continuing to race in the Super Vee class, winning the championship that year. In 1976 Kozarowitzky drove ATS cars in the Formula 2 class. That same year he also raced in the New Zealand Formula Pacific series with Keke Rosberg, finishing fourth.</p><h4>Formula 1</h4><p id="etusivuTeksti">Kozarowitzky made two attempts to enter Formula 1 with a RAM team car in 1977, but was eliminated on both occasions (Swedish and British GPs).</p></div>\
       	</div>\
       </div>';
       var kekeHTML =
-        '<div class="col-sm-10 p-3 bg-light">\
-      	<div>\<img src="kirjasto/KekeRosberg/keke.jpg" class="profiilikuva1"/><h3>Keijo Erik ”Keke” Rosberg (s. 6. joulukuuta 1948 Solna, Ruotsi)</h3><h4>Kaudet 1978–1981</h4><p id="etusivuTeksti">Vuonna 1978 Rosberg sai tilaisuuden kilpailla Formula 1 -sarjassa, kun Theodore-talli palkkasi hänet kuljettajakseen. Talli ei ollut sarjan parhaita eikä taistellut voitoista. Rosberg selvisi ensimmäisessä kilpailussaan Etelä-Afrikassa karsinnoista ja lähti kilpailuun 24. lähtöruudusta mutta joutui keskeyttämään polttoainevuotoon.Kauden kuluessa hän kilpaili myös ATS-tallin autolla. Kauden merkittävin suoritus oli MM-sarjan ulkopuolisena kilpailuna ajetun BRDC International Trophyn voitto sateisella Silverstonen radalla. Vaikka kilpailu oli MM-sarjan ulkopuolinen, sen osallistujalistalla oli F1:n kuljettajien parhaimmistoa. Rosbergilla ei ollut sopimusta F1-kauden 1979 alussa, joten hän ajoi keväällä muutaman F2-kilpailun ja teki sitten sopimuksen Pohjois-Amerikan Can-Am-sarjaa ajavan Newman–Freeman-tallin kanssa. Vaikka hän saikin F1-tallipaikan kesken kautta, hän ajoi silti Can-Am-sarjan loppuun ja menetti mestaruuden vasta viimeisissä kilpailuissa. Formula 1 -kauden 1979 puolivälin tienoilla Rosberg liittyi Wolf-talliin entisen maailmanmestarin James Huntin tilalle. Vauhti oli ajoittain lupaavaa, ja Alankomaissa hän oli harjoitusten 8:s. Paras kilpailusijoitus oli Ranskassa ajettu yhdeksäs sija.Kaudeksi 1980 Rosberg sai paikan Fittipaldi-tallista, jonka ykköskuljettajana ajoi kaksinkertainen maailmanmestari Emerson Fittipaldi. Argentiinassa Rosberg oli harjoitusten 13. nopein. Itse kilpailussa hän ohitti yksi toisensa jälkeen edellä olevia autoja nousten kolmanneksi, ja vaikka hänen täytyi käydä varikolla polttoainetta tankkauttamassa, piti hän silti paikkansa maaliin asti. Näin hänestä tuli ensimmäinen suomalainen Formula 1:n palkintokorokkeella. Rosberg ajoi hyvin myös jatkossa, ja hän oli selvästi tallikaveriaan Fittipaldia nopeampi. Tallin autojen suorituskyky oli kuitenkin hiipunut suhteessa kilpailijoihin, eikä Rosberg ajanut enää kuin kerran MM-pisteille kauden aikana. Hän oli silti MM-sarjan 10:s. Toisella kaudellaan Fittipaldilla Rosberg oli tallin ykköskuski, kun Emerson Fittipaldi oli lopettanut ajamisen. Kausi oli pettymys. Auto oli sarjan heikoimpia, ja usein Rosbergin osana oli karsiutuminen tai keskeytys mekaaniseen vikaan. Hän olisi halunnut siirtyä tallista muualle, mutta Fittipaldi ei suostunut purkamaan sopimusta. Hänellä oli sopimus tallin kanssa vuoden 1982 loppuun, mutta hänen onnistui irrottautua tallista kauden 1981 lopussa vedoten maksamattomiin palkkoihin.</p><h4>Kausi 1982</h4><p id="etusivuTeksti">Kaudeksi 1982 Rosberg pääsi Williamsille, jossa hänellä oli ensi kertaa urallaan mahdollisuus taistella maailmanmestaruudesta. Ensimmäisessä, Etelä-Afrikassa ajetussa kilpailussa hän oli viides[20], mutta seuraava kilpailu Brasiliassa päättyi toiseen sijaan. Rosberg ehdittiin kertaalleen hylätä sääntöjenvastaisen vesitankin vuoksi, mutta hylkäys kumottiin pian ja Rosberg sai pitää sijansa. Hän oli toinen myös Long Beachin kisassa[21] ja siirtyi selvään MM-johtoon. Runsas viikko Long Beachin kilpailun jälkeen tuli tieto, että Brasilian kilpailun protestit oli käsitelty ja Rosberg sekä kisan voittanut Nelson Piquet oli hylätty. Muutamat tallit olivat tehneet protestin Piquetä ja Rosbergiä vastaan sääntöjenvastaisista vesitankeista. Rosberg menetti MM-johdon lisäksi Brasilian palkintorahat. Hylkäyksistä johtuen Williams ja useat muut tallit päättivät boikotoida seuraavaa, San Marinon osakilpailua. Kilpailun odotettiin menettävän MM-arvonsa, mutta niin ei käynyt. Seuraavassa kilpailussa Belgiassa Rosbergista tuli ensimmäinen suomalainen, joka on johtanut Formula 1:n MM-osakilpailua. Maalissa Rosberg oli toinen tehtyään kierroksella ohituksen yhteydessä pienen virheen, jonka seurauksena John Watson pääsi hänen ohitseen voittoon. Monacossa Rosberg keskeytti omaan ajovirheeseen, Detroitissa hän oli neljäs ja Kanadassa auton vaihteisto hajosi noin 20 kierrosta ennen maalia. Hollannin GP:n kolmannella sijallaan hän nousi MM-pisteissä kolmanneksi. Rosbergin suorituksia alettiin kauden edetessä arvostaa myös Suomen lehdistössä, joka oli aikaisemmin lähinnä piikitellyt häntä. Britanniassa Rosberg saavutti uransa ensimmäisen paalupaikan, mutta kisassa auto sammui lähtöruudukkoon ja Rosberg joutui starttaamaan joukon hänniltä. Lopulta kisa päättyi Rosbergilta keskeytykseen auton teknisten ongelmien vuoksi. Ranskassa Rosberg oli viides. Maailmanmestaruus näytti karkaavan Didier Pironille, joka johti Rosbergia 16 pisteellä. Saksan sateisissa harjoituksissa maailmanmestaruustaisto sai käänteen, kun Pironi ajoi Alain Prostin auton perään ja oli vähällä menettää henkensä. Hän joutui sairaalaan pitkäksi aikaa, eikä enää koskaan palannut Formula 1 -radoille. Kilpailussa Rosberg ajoi vara-autolla kolmanneksi ja oli pitkän tauon jälkeen palkintokorokkeella. Näin Rosberg nousi uudelleen mukaan maailmanmestaruustaisteluun. Itävallassa Rosberg oli lähellä voittoa mutta jäi toiseksi häviten viidellä sadasosasekunnilla Elio de Angelisille.Samalla Rosberg nousi maailmanmestaruuspisteissä toiseksi. Seuraavassa kisassa, Sveitsin GP:ssä Ranskan Dijonissa Rosberg ajoi koko F1-uransa ensimmäiseen voittoonsa. Maailmanmestaruus olisi katkolla seuraavassa osakilpailussa. Italiassa Rosberg jäi kuitenkin kahdeksanneksi jääden ilman MM-pisteitä. Ennen kauden viimeistä, Las Vegasissa ajettavaa kilpailua enää kahdella kuljettajalla oli mahdollisuudet mestaruuteen. Rosbergille riittäisi yksikin piste mestaruuteen, muussa tapauksessa John Watson ottaisi osakilpailuvoitolla mestaruuden. Aika-ajoissa Rosberg oli kuudes ja Watson yhdeksäs. Watson nousi heikon lähdön jälkeen vähitellen kohti kärkeä, ja noin 20 kierrosta ennen maalia hän oli toisena. Michele Alboreto ajoi kärjessä maaliin asti. Rosberg oli viides ja saavutti näin kaikkien aikojen ensimmäisenä pohjoismaalaisena kuljettajana Formula 1 -luokan maailmanmestaruuden. Virallinen Suomi silloisen kulttuuriministerin Kalevi Kivistön johdolla ei huomioinut Rosbergin maailmanmestaruutta millään tavoin. Sen sijaan eduskunnan puhemies Johannes Virolainen, jonka mielestä Rosberg oli "ajanut Suomen maailmankartalle", tarjosi Rosbergille juhlakahvit eduskuntatalossa hänen käydessään kotimaassa. Rosberg valittiin mestaruuden myötä Suomen vuoden urheilijaksi.</p><h4>Kaudet 1983–1986</h4><p id="etusivuTeksti">Rosbergin toinen kausi Williamsilla vuonna 1983 oli vaikea. Kauden kohokohta oli voitto Monacossa. Ennen lähtöä rata oli märkä, mutta kuivumassa. Kuljettajat valitsivat Rosbergia lukuun ottamatta sadekelin renkaat ja kisan alettua muiden oli käytävä varikolla vaihdattamassa kuivan kelin renkaat. Rosberg ajoi voittoon. Hän pääsi juhlimaan palkintokorokkeella myös Detroitissa sijoituttuaan toiseksi. Nämä olivat kuitenkin MM-kauden ainoat palkintosijoitukset ja Rosberg sijoittui mestaruustaulukossa viidennelle sijalle keräten yhteensä 27 pistettä. Vuonna 1983 järjestettiin kaikkien aikojen viimeistä kertaa MM-sarjan ulkopuolinen kilpailu: 1983 Race of Champions Brands Hatchissa, jonka Rosberg vei nimiinsä.Kaudella 1984 auton epäluotettavuus kiusasi Rosbergia ja mies joutui keskeyttämään yhteensä kahdeksan kertaa. Viimeisestä seitsemästä kisasta hän pääsi maaliin vain yhdessä. Kauden kohokohtana voidaan pitää Dallasissa liukkaalla ja murenevalla katuradalla ajettua voittoa. Voitto oli ensimmäinen Hondan turbomoottorilla otettu ykköstila F1:ssä. Loppupisteissä Rosberg sijoittui kahdeksanneksi 20,5 pisteellään.Kaudella 1985 autossa oli edelleen suuria ongelmia luotettavuuden kanssa etenkin alkukaudesta, mutta voitto Detroitissa alkoi muuttamaan tilannetta. Rosbergin kolmen palkintosijan putki (joista yksi oli kauden päätöskisan voitto Australiassa) nostivat hänet MM-sarjan kolmannelle tilalle 40 pisteellä. Kaudesta muistetaan hyvin myös hänen huima kierroksensa Silverstonen aika-ajoissa. Rosberg ajoi paalupaikalle, mittauttaen 258,9 km/h keskinopeuden. Se säilyi ennätyksenä aina 2000-luvulle asti, jolloin Williamsin kuljettaja Juan Pablo Montoya teki uuden ennätyksen vuoden 2002 Italian GP:ssä. Kausi 1986 jäi Rosbergin viimeiseksi F1-kaudeksi. Hän ajoi McLarenilla, hallitsevan maailmanmestarin Alain Prostin tallikaverina. Rosberg ei voittanut kaudella yhtään kilpailua, pääsi palkintopallille vain yhden kerran ja hävisi selvästi tallitoverilleen. Aliohjautuva auto ei sopinut lainkaan Rosbergin ajotyylille, eikä sitä onnistuttu säätämään hänelle sopivaksi koko kauden aikana. Rosberg ilmoitti heinäkuussa Hockenheimin kilpailuviikonlopun perjantaina lopettavansa uransa Formula ykkösissä. Hän kertoi tehneensä päätöksen jo kaksi vuotta aiemmin. Samalla Rosberg arvosteli uutta polttoainerajoitusta, joka pakotti kuskit säästelemään polttoainetta kilpailun aikana. Hän kertoi myös kyllästyneensä F1-auton ajamisen rasituksiin, matkustamiseen ja mekaanisten vikojen aiheuttamaan turhautumiseen. Viimeisessä F1-kilpailussaan Australiassa Rosberg keskeytti rengasrikkoon ylivoimaiselta kärkipaikalta. Kauden loppusijoituksissa Rosberg oli kuudes 22 pisteellään.</p></div>\
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/KekeRosberg/keke.jpg" class="profiilikuva1"/><h3>Keijo Erik ”Keke” Rosberg (s. 6. joulukuuta 1948 Solna, Ruotsi)</h3><h4>Kaudet 1978–1981</h4><p id="etusivuTeksti">Vuonna 1978 Rosberg sai tilaisuuden kilpailla Formula 1 -sarjassa, kun Theodore-talli palkkasi hänet kuljettajakseen. Talli ei ollut sarjan parhaita eikä taistellut voitoista. Rosberg selvisi ensimmäisessä kilpailussaan Etelä-Afrikassa karsinnoista ja lähti kilpailuun 24. lähtöruudusta mutta joutui keskeyttämään polttoainevuotoon.Kauden kuluessa hän kilpaili myös ATS-tallin autolla. Kauden merkittävin suoritus oli MM-sarjan ulkopuolisena kilpailuna ajetun BRDC International Trophyn voitto sateisella Silverstonen radalla. Vaikka kilpailu oli MM-sarjan ulkopuolinen, sen osallistujalistalla oli F1:n kuljettajien parhaimmistoa. Rosbergilla ei ollut sopimusta F1-kauden 1979 alussa, joten hän ajoi keväällä muutaman F2-kilpailun ja teki sitten sopimuksen Pohjois-Amerikan Can-Am-sarjaa ajavan Newman–Freeman-tallin kanssa. Vaikka hän saikin F1-tallipaikan kesken kautta, hän ajoi silti Can-Am-sarjan loppuun ja menetti mestaruuden vasta viimeisissä kilpailuissa. Formula 1 -kauden 1979 puolivälin tienoilla Rosberg liittyi Wolf-talliin entisen maailmanmestarin James Huntin tilalle. Vauhti oli ajoittain lupaavaa, ja Alankomaissa hän oli harjoitusten 8:s. Paras kilpailusijoitus oli Ranskassa ajettu yhdeksäs sija.Kaudeksi 1980 Rosberg sai paikan Fittipaldi-tallista, jonka ykköskuljettajana ajoi kaksinkertainen maailmanmestari Emerson Fittipaldi. Argentiinassa Rosberg oli harjoitusten 13. nopein. Itse kilpailussa hän ohitti yksi toisensa jälkeen edellä olevia autoja nousten kolmanneksi, ja vaikka hänen täytyi käydä varikolla polttoainetta tankkauttamassa, piti hän silti paikkansa maaliin asti. Näin hänestä tuli ensimmäinen suomalainen Formula 1:n palkintokorokkeella. Rosberg ajoi hyvin myös jatkossa, ja hän oli selvästi tallikaveriaan Fittipaldia nopeampi. Tallin autojen suorituskyky oli kuitenkin hiipunut suhteessa kilpailijoihin, eikä Rosberg ajanut enää kuin kerran MM-pisteille kauden aikana. Hän oli silti MM-sarjan 10:s. Toisella kaudellaan Fittipaldilla Rosberg oli tallin ykköskuski, kun Emerson Fittipaldi oli lopettanut ajamisen. Kausi oli pettymys. Auto oli sarjan heikoimpia, ja usein Rosbergin osana oli karsiutuminen tai keskeytys mekaaniseen vikaan. Hän olisi halunnut siirtyä tallista muualle, mutta Fittipaldi ei suostunut purkamaan sopimusta. Hänellä oli sopimus tallin kanssa vuoden 1982 loppuun, mutta hänen onnistui irrottautua tallista kauden 1981 lopussa vedoten maksamattomiin palkkoihin.</p><h4>Kausi 1982</h4><p id="etusivuTeksti">Kaudeksi 1982 Rosberg pääsi Williamsille, jossa hänellä oli ensi kertaa urallaan mahdollisuus taistella maailmanmestaruudesta. Ensimmäisessä, Etelä-Afrikassa ajetussa kilpailussa hän oli viides[20], mutta seuraava kilpailu Brasiliassa päättyi toiseen sijaan. Rosberg ehdittiin kertaalleen hylätä sääntöjenvastaisen vesitankin vuoksi, mutta hylkäys kumottiin pian ja Rosberg sai pitää sijansa. Hän oli toinen myös Long Beachin kisassa[21] ja siirtyi selvään MM-johtoon. Runsas viikko Long Beachin kilpailun jälkeen tuli tieto, että Brasilian kilpailun protestit oli käsitelty ja Rosberg sekä kisan voittanut Nelson Piquet oli hylätty. Muutamat tallit olivat tehneet protestin Piquetä ja Rosbergiä vastaan sääntöjenvastaisista vesitankeista. Rosberg menetti MM-johdon lisäksi Brasilian palkintorahat. Hylkäyksistä johtuen Williams ja useat muut tallit päättivät boikotoida seuraavaa, San Marinon osakilpailua. Kilpailun odotettiin menettävän MM-arvonsa, mutta niin ei käynyt. Seuraavassa kilpailussa Belgiassa Rosbergista tuli ensimmäinen suomalainen, joka on johtanut Formula 1:n MM-osakilpailua. Maalissa Rosberg oli toinen tehtyään kierroksella ohituksen yhteydessä pienen virheen, jonka seurauksena John Watson pääsi hänen ohitseen voittoon. Monacossa Rosberg keskeytti omaan ajovirheeseen, Detroitissa hän oli neljäs ja Kanadassa auton vaihteisto hajosi noin 20 kierrosta ennen maalia. Hollannin GP:n kolmannella sijallaan hän nousi MM-pisteissä kolmanneksi. Rosbergin suorituksia alettiin kauden edetessä arvostaa myös Suomen lehdistössä, joka oli aikaisemmin lähinnä piikitellyt häntä. Britanniassa Rosberg saavutti uransa ensimmäisen paalupaikan, mutta kisassa auto sammui lähtöruudukkoon ja Rosberg joutui starttaamaan joukon hänniltä. Lopulta kisa päättyi Rosbergilta keskeytykseen auton teknisten ongelmien vuoksi. Ranskassa Rosberg oli viides. Maailmanmestaruus näytti karkaavan Didier Pironille, joka johti Rosbergia 16 pisteellä. Saksan sateisissa harjoituksissa maailmanmestaruustaisto sai käänteen, kun Pironi ajoi Alain Prostin auton perään ja oli vähällä menettää henkensä. Hän joutui sairaalaan pitkäksi aikaa, eikä enää koskaan palannut Formula 1 -radoille. Kilpailussa Rosberg ajoi vara-autolla kolmanneksi ja oli pitkän tauon jälkeen palkintokorokkeella. Näin Rosberg nousi uudelleen mukaan maailmanmestaruustaisteluun. Itävallassa Rosberg oli lähellä voittoa mutta jäi toiseksi häviten viidellä sadasosasekunnilla Elio de Angelisille.Samalla Rosberg nousi maailmanmestaruuspisteissä toiseksi. Seuraavassa kisassa, Sveitsin GP:ssä Ranskan Dijonissa Rosberg ajoi koko F1-uransa ensimmäiseen voittoonsa. Maailmanmestaruus olisi katkolla seuraavassa osakilpailussa. Italiassa Rosberg jäi kuitenkin kahdeksanneksi jääden ilman MM-pisteitä. Ennen kauden viimeistä, Las Vegasissa ajettavaa kilpailua enää kahdella kuljettajalla oli mahdollisuudet mestaruuteen. Rosbergille riittäisi yksikin piste mestaruuteen, muussa tapauksessa John Watson ottaisi osakilpailuvoitolla mestaruuden. Aika-ajoissa Rosberg oli kuudes ja Watson yhdeksäs. Watson nousi heikon lähdön jälkeen vähitellen kohti kärkeä, ja noin 20 kierrosta ennen maalia hän oli toisena. Michele Alboreto ajoi kärjessä maaliin asti. Rosberg oli viides ja saavutti näin kaikkien aikojen ensimmäisenä pohjoismaalaisena kuljettajana Formula 1 -luokan maailmanmestaruuden. Virallinen Suomi silloisen kulttuuriministerin Kalevi Kivistön johdolla ei huomioinut Rosbergin maailmanmestaruutta millään tavoin. Sen sijaan eduskunnan puhemies Johannes Virolainen, jonka mielestä Rosberg oli "ajanut Suomen maailmankartalle", tarjosi Rosbergille juhlakahvit eduskuntatalossa hänen käydessään kotimaassa. Rosberg valittiin mestaruuden myötä Suomen vuoden urheilijaksi.</p><h4>Kaudet 1983–1986</h4><p id="etusivuTeksti">Rosbergin toinen kausi Williamsilla vuonna 1983 oli vaikea. Kauden kohokohta oli voitto Monacossa. Ennen lähtöä rata oli märkä, mutta kuivumassa. Kuljettajat valitsivat Rosbergia lukuun ottamatta sadekelin renkaat ja kisan alettua muiden oli käytävä varikolla vaihdattamassa kuivan kelin renkaat. Rosberg ajoi voittoon. Hän pääsi juhlimaan palkintokorokkeella myös Detroitissa sijoituttuaan toiseksi. Nämä olivat kuitenkin MM-kauden ainoat palkintosijoitukset ja Rosberg sijoittui mestaruustaulukossa viidennelle sijalle keräten yhteensä 27 pistettä. Vuonna 1983 järjestettiin kaikkien aikojen viimeistä kertaa MM-sarjan ulkopuolinen kilpailu: 1983 Race of Champions Brands Hatchissa, jonka Rosberg vei nimiinsä.Kaudella 1984 auton epäluotettavuus kiusasi Rosbergia ja mies joutui keskeyttämään yhteensä kahdeksan kertaa. Viimeisestä seitsemästä kisasta hän pääsi maaliin vain yhdessä. Kauden kohokohtana voidaan pitää Dallasissa liukkaalla ja murenevalla katuradalla ajettua voittoa. Voitto oli ensimmäinen Hondan turbomoottorilla otettu ykköstila F1:ssä. Loppupisteissä Rosberg sijoittui kahdeksanneksi 20,5 pisteellään.Kaudella 1985 autossa oli edelleen suuria ongelmia luotettavuuden kanssa etenkin alkukaudesta, mutta voitto Detroitissa alkoi muuttamaan tilannetta. Rosbergin kolmen palkintosijan putki (joista yksi oli kauden päätöskisan voitto Australiassa) nostivat hänet MM-sarjan kolmannelle tilalle 40 pisteellä. Kaudesta muistetaan hyvin myös hänen huima kierroksensa Silverstonen aika-ajoissa. Rosberg ajoi paalupaikalle, mittauttaen 258,9 km/h keskinopeuden. Se säilyi ennätyksenä aina 2000-luvulle asti, jolloin Williamsin kuljettaja Juan Pablo Montoya teki uuden ennätyksen vuoden 2002 Italian GP:ssä. Kausi 1986 jäi Rosbergin viimeiseksi F1-kaudeksi. Hän ajoi McLarenilla, hallitsevan maailmanmestarin Alain Prostin tallikaverina. Rosberg ei voittanut kaudella yhtään kilpailua, pääsi palkintopallille vain yhden kerran ja hävisi selvästi tallitoverilleen. Aliohjautuva auto ei sopinut lainkaan Rosbergin ajotyylille, eikä sitä onnistuttu säätämään hänelle sopivaksi koko kauden aikana. Rosberg ilmoitti heinäkuussa Hockenheimin kilpailuviikonlopun perjantaina lopettavansa uransa Formula ykkösissä. Hän kertoi tehneensä päätöksen jo kaksi vuotta aiemmin. Samalla Rosberg arvosteli uutta polttoainerajoitusta, joka pakotti kuskit säästelemään polttoainetta kilpailun aikana. Hän kertoi myös kyllästyneensä F1-auton ajamisen rasituksiin, matkustamiseen ja mekaanisten vikojen aiheuttamaan turhautumiseen. Viimeisessä F1-kilpailussaan Australiassa Rosberg keskeytti rengasrikkoon ylivoimaiselta kärkipaikalta. Kauden loppusijoituksissa Rosberg oli kuudes 22 pisteellään.</p></div>\
+      	</div>\
+      </div>';
+      var kekeHTMLen =
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/KekeRosberg/keke.jpg" class="profiilikuva1"/><h3>Keijo Erik ”Keke” Rosberg (Born 6. December 1948 Solna, Sweden)</h3><p id="etusivuTeksti">In 1978, Rosberg was given the opportunity to compete in Formula 1 when he was hired as a driver by the Theodore team. The team was not one of the best in the series and did not fight for wins. In his first race in South Africa, Rosberg survived qualifying and started the race from 24th on the grid, but was forced to retire due to a fuel leak. The most notable performance of the season was winning the BRDC International Trophy, a non-championship race at the rainy Silverstone circuit. Although it was a non-Championship race, the entry list included some of the best drivers in F1. Rosberg had no contract at the start of the 1979 F1 season, so he drove a few F2 races in the spring and then signed a contract with the Newman-Freeman team in the North American Can-Am series. Even though he got an F1 team seat in the middle of the season, he still finished the Can-Am series and only lost the championship in the final races. Around the middle of the 1979 Formula 1 season, Rosberg joined the Wolf team to replace former world champion James Hunt. His pace was occasionally promising, and in the Netherlands he finished 8th in practice. His best race finish was ninth in France. For the 1980 season, Rosberg was given a seat in the Fittipaldi team, with two-time world champion Emerson Fittipaldi as his number one driver. In Argentina, Rosberg was 13th fastest in practice. In the race itself he overtook one car after another to finish third, and although he had to go to the pits to refuel, he kept his position until the finish. In doing so, he became the first Finn on the Formula 1 podium. Rosberg continued to drive well and was clearly faster than his team-mate Fittipaldi. However, the performance of the stables cars had diminished relative to the competition and Rosberg only scored World Championship points once during the season. He was still 10th in the World Championship series. In his second season with Fittipaldi, Rosberg was the teams number one driver when Emerson Fittipaldi retired. It was a disappointing season. The car was one of the weakest in the series, and often Rosberg was part of a retirement or a retirement due to a mechanical failure. He would have liked to move on from the team, but Fittipaldi refused to terminate his contract. He had a contract with the garage until the end of 1982, but managed to leave at the end of the 1981 season, citing unpaid wages. For the 1982 season, Rosberg joined Williams, where for the first time in his career he had a chance to fight for the world championship. He finished fifth in the first race in South Africa,[20] but the next race in Brazil ended in second place. Rosberg was disqualified on one occasion for an illegal water tank, but the disqualification was soon overturned and Rosberg was able to keep his place. He was also second in the Long Beach race[21] and took a clear lead in the World Championship. Just over a week after the Long Beach race, it was announced that the protests from the Brazilian race had been dealt with and Rosberg and race winner Nelson Piquet had been disqualified. A few teams had lodged protests against Piquet and Rosberg for illegal water tanks. Rosberg lost not only the World Championship lead but also the Brazilian prize money. As a result of the disqualifications, Williams and several other teams decided to boycott the next round in San Marino. The race was expected to lose its World Championship status, but it didnt. At the next race in Belgium, Rosberg became the first Finn to lead a Formula 1 World Championship race. At the finish, Rosberg was second after making a small mistake on a lap when overtaking, which allowed John Watson to overtake him for the win. In Monaco, Rosberg retired due to his own driving error, in Detroit he was fourth and in Canada the cars gearbox broke down with about 20 laps to go. His third place in the Dutch GP moved him up to third in the World Championship points. As the season progressed, Rosbergs performances began to be appreciated by the Finnish press, who had previously mainly criticised him. In Britain, Rosberg achieved the first pole position of his career, but in the race the car died on the grid and Rosberg had to start from the back of the grid. In the end, the race ended with Rosberg retiring due to technical problems with the car. In France, Rosberg was fifth. The world championship seemed to be slipping away to Didier Piron, who led Rosberg by 16 points. In a rainy practice session in Germany, the world championship race took a twist when Pironi hit the back of Alain Prosts car and almost lost his life. He was hospitalised for a long time and never returned to Formula 1 racing. In the race, Rosberg finished third in the reserve car and was on the podium after a long break. In doing so, Rosberg re-entered the world championship race. In Austria, Rosberg was close to victory but finished second, losing by five hundredths of a second to Elio de Angelis, and moving up to second in the world championship points. In the next race, the Swiss GP in Dijon, France, Rosberg scored the first victory of his F1 career. The world championship would be up for grabs at the next race. In Italy, however, Rosberg finished eighth, missing out on World Championship points...</p></div>\
       	</div>\
       </div>';
       var jyrkiHTML =
-        '<div class="col-sm-10 p-3 bg-light">\
-      	<div>\<img src="kirjasto/JJLehto/jjlehto.jpg" class="profiilikuva"/><h3>Jyrki Juhani Järvilehto, ajajanimeltään JJ Lehto, (s. 31. tammikuuta 1966 Espoo).\
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/JJLehto/jjlehto.jpg" class="profiilikuva"/><h3>Jyrki Juhani Järvilehto, ajajanimeltään JJ Lehto, (s. 31. tammikuuta 1966 Espoo).\
                 </h3><p id="etusivuTeksti">Järvilehdon F1-ura alkoi kaudella 1989 Keke Rosbergin manageroimana, kun hän pääsi aluksi Ferrarin testikuljettajaksi ja kauden\
                    päätteeksi Onyxin kilpakuljettajaksi. Ferrarin kanssa hän teki testisopimuksen maaliskuussa 1989. Hänellä oli jopa mahdollisuus päästä kilpailuihin Ferrarin\
                     ratissa Gerhard Bergerin loukkaannuttua pahasti San Marinon GP:ssa. Häntä pidettiin kuitenkin kyseiseen tehtävään liian kokemattomana, ja niinpä Osella-kuljettaja\
@@ -279,40 +611,76 @@
                             joukossa”. Kaudella 1990 talli ja tallikaveri olivat samat. Kahdessa ensimmäisessä kilpailussa käytössä oli edellisen kauden Onyx ORE-1 -auto. Järvilehdon kilpailut jäivät Yhdysvalloissa ja Brasiliassa aika-ajoihin, mutta kun uusi ORE-2-auto otettiin käyttöön, aika-ajoista selvittiin välillä kilpailuihin. San Marinon GP:ssa Järvilehto onnistui ajamaan maaliin asti sijalla 12, joka oli ensimmäinen kilpailu, jonka Järvilehto ajoi maaliin, mutta muissa kilpailuissa matka päättyi joko karsiutumiseen, keskeytykseen tai sijoituksetta jäämiseen.Onyx vetäytyi sarjasta Unkarin osakilpailun jälkeen, minkä takia Järvilehtokaan ei päässyt osallistumaan kauden kuuteen viimeiseen osakilpailuun. Johansson sen sijaan ei ajanut enää kahden ensimmäisen kilpailun jälkeen, ja Järvilehdon tallikaveriksi vaihtui Gregor Foitek.</p><h4></h4><p id="etusivuTeksti"></p><h4>Ensimmäiset pisteet</h4><p id="etusivuTeksti">Kaudeksi 1991 Järvilehto siirtyi pieneen Scuderia Italia -talliin. Hänen tallikaverinaan ajoi italialainen Emanuele Pirro, joka oli ajanut tallissa jo kaudella 1990. Kausi oli Järvilehdon osalta keskeytyksiä täynnä, ja ongelmia oli jo kautta edeltäneissä testeissä. Kauden kolmannessa kilpailussa San Marinossa hän onnistui nousemaan palkintokorokkeelle tultuaan kolmantena maaliin, kun moni kuljettaja oli märän radan takia joutunut keskeyttämään. Samalla hän saavutti F1-uransa ensimmäiset pisteet, ja hänestä tuli toinen suomalainen, joka oli ollut F1-kilpailussa palkintokorokkeella ja pistesijalla. Kilpailu oli samalla ensimmäinen, jossa kaksi suomalaista nousi pistesijoille Mika Häkkisen ollessa kisan viides. Muita pistesijoituksia hän ei kaudella enää saavuttanut. Hän sijoittui neljällä MM-pisteellään kuljettajien MM-sarjassa sijalle 12.MM-sija oli Järvilehdon paras. Kaudella 1992 Järvilehto jatkoi Scuderia Italia -tallissa. Hänen tallikaverikseen vaihtui italialainen Pierluigi Martini. Vaikka keskeytyksiä ei Järvilehdolle sattunut niin paljon kuin kaudella 1991, hän ei kuitenkaan onnistunut ajamaan kertaakaan pistesijalle. Auto ei ollut kovinkaan hyvä, ja vaikeasti sujuneen Monacon osakilpailun jälkeen Järvilehto totesi Autocource 1992–93 -julkaisussa ”SSDD – same shit, different day”.Järvilehdon kauden parhaaksi sijoitukseksi jäi seitsemäs sija Belgian osakilpailusta. Martini sen sijaan onnistui ajamaan kahdesti kuudenneksi ja saavutti näin kaksi pistettä. Kaudeksi 1993 Järvilehto siirtyi uuteen sveitsiläiseen Sauber-talliin, jossa hänen tallikaverinaan ajoi itävaltalainen Karl Wendlinger. Heti kauden avanneessa Etelä-Afrikan GP:ssa kuudennesta ruudusta lähtenyt Järvilehto onnistui ajamaan viidennelle sijalle, ja hän saavutti kaksi MM-pistettä. Hän tosin jäi kaksi kierrosta kärjelle ja oli viimeinen maaliin ajanut kuljettaja. Järvilehto onnistui ajamaan pisteille vielä San Marinon kilpailussa, jossa hän oli neljäs. Sijoitus oli Järvilehdon toiseksi paras. Aivan kilpailun loppuvaiheilla hänen moottorinsa hajosi, mutta koska kukaan ei ollut hänen kanssaan samalla kierroksella, hän ei menettänyt yhtään sijaa. Loppukaudella hän onnistui ajamaan viidesti kymmenen parhaan joukkoon, mutta ei saavuttanut enää pisteitä. Koko kaudelta pisteitä kertyi hänelle 5, ja hänen sijoituksensa kuljettajien MM-sarjassa oli kolmastoista.MM-pisteillä mitattuna kausi oli Järvilehdon paras.</p><h4>Epäonnistunut Benetton-pesti</h4><p id="etusivuTeksti">Asiat näyttivät kääntyneen parempaan suuntaan, kun Järvilehto sai ajopaikan huipputalli Benettonilta kaudeksi 1994. Talli etsi sopivaa kuljettajaa Michael Schumacherin pariksi vuodenvaihteessa testien kautta. Testeihin osallistui kaiken kaikkiaan viisi kuljettajaa, joista yksi oli Järvilehto. Suurimpana suosikkina talliin pidettiin Michele Alboretoa, joka olisi tuonut talliin huomattavan määrän sponsorirahaa. Järvilehto onnistui kuitenkin testeissä niin hyvin, että hänet päätettiin ottaa talliin.</p><h4>Testionnettomuus Silverstonessa</h4><p id="etusivuTeksti">Ennen kauden alkua tammikuussa Järvilehto kuitenkin joutui vakavaan testionnettomuuteen Silverstonen radalla. Hän oli testaamassa Benettonin B194-auton uutta jousitusta, kun hän syöksyi Hangar-suoran päässä olleessa Stowe-mutkassa radan reunaan perä edellä ja loukkasi vakavasti niskansa. Hänen selkäytimeensä joutui luunsiruja, ja kuolema oli todella lähellä. Hän muisti onnettomuudesta ainoastaan sen, että hän oli maannut selällään kykenemättömänä liikuttamaan käsiään tai jalkojaan. Hänet vietiin ensin Northamptonin sairaalaan, jossa annettiin ainoastaan diagnoosi siitä, että niska oli murtunut. Myöhemmin hänet vietiin Lontoossa sijainneeseen Clinical Center -nimiseen yksityissairaalaan. Niskaspesialisti, tohtori OBrien, leikkasi hänet seuraavana päivänä. Leikkaus tehtiin kurkun kautta, ja se kesti kaikkiaan kahdeksan tuntia. Tapahtuman vakavuutta ei aluksi haluttu kertoa muun muassa sponsorineuvottelujen takia, mutta asiaa ei pystytty kauan salaamaan. Leikkauksen jälkeen Järvilehto lähti toipumaan Mauritiukselle. Hän kertoi kipujen olleen sietämättömiä ja ettei missään asennossa ollut hyvä olla. Myöhemmin Järvilehto on katunut valintaansa lähteä toipumislomalle Mauritiukselle. Hän yritti tuloksetta saada itseään kuntoon kävelylenkkien avulla, ja varsinkin alussa oli vaikeaa. Lääkärien mukaan hän pääsisi takaisin normaaliin elämään puolen vuoden kuluttua, mutta jo kahdeksan viikon kuluttua hän testasi F1-autoa. Järvilehto kertoi, ettei tapahtuma aiheuttanut erityistä pelkoa, mutta asia pyöri koko ajan mielessä. Hän joutui olemaan sivussa kauden kahdesta ensimmäisestä kilpailusta, joissa hänet korvasi alankomaalainen Jos Verstappen. Järvilehto itse ei muistanut onnettomuuteen johtaneesta tilanteesta mitään, mutta hän arveli onnettomuuden johtuneen liian kovasta nopeudesta. Hän on myös veikannut alijäähtyneen veden tai auton rikkoutumisen vaikuttaneen asiaan. Järvilehto on myöhemmin ajatellut, että uudemmissa autoissa hänen niskansa ei olisi murtunut, koska ohjaamon reunoja on kauden 1994 jälkeen nostettu.</p><h4>Paluu kilpailuihin puolikuntoisena</h4><p id="etusivuTeksti">San Marinon GP Imolassa oli Järvilehdon kauden ensimmäinen kilpailu. Ennen kilpailua hän ei ollut pystynyt ajamaan edes puolikasta testipäivää kipujen takia. Harjoituksissa kivut olivat yhä valtavat eikä hän jaksanut kannatella ajon aikana kunnolla päätään niskalihasten huonon kunnon vuoksi. San Marinossa hän järkyttyi uudestaan. Järvilehdon hyvä ystävä Roland Ratzenberger kuoli aika-ajoissa pahan törmäyksen seurauksena. He olivat edellisenä päivänä illastaneet yhdessä ja tulleet samalla autolla Imolaan. Järvilehdon osalta kilpailu päättyi lähtöruutuun, sillä hän ei päässyt liikkeelle. Lisäksi Lotus-kuljettaja Pedro Lamy ajoi lujaa häntä perään. Varikolta kilpailua seurannut Järvilehto koki pian uuden järkytyksen: Ayrton Senna ajoi kuolettavan kolarinsa. Hänen henkiseltä toipumiseltaan kerrotaan tässä vaiheessa menneen pohja. Seuraavassa kilpailussa, Monacon GP:ssa, Järvilehto jäi pisteittä. Hän onnistui kuitenkin ajamaan seitsemänneksi, mikä vaikutti lupaavalta. Totuus oli täysin muuta: hänen niskaansa sattui koko ajan eikä hän jaksanut kannatella päätään. Omien sanojensa mukaan hän näki radan kunnolla ainoastaan radan vähäisillä suorilla. Järvilehdon niskalihakset revähtivät ja toipuminen hidastui. Niskaa piti tukea entistä tukevammin. Hän itse ehdotti pitävänsä sairauslomaa, jotta saisi itsensä kuntoon. Niska näytti paranevan, ja hän osallistui kahteen seuraavaan kilpailuun. Espanjan osakilpailuun Järvilehto lähti lupaavalta neljänneltä sijalta, joka oli samalla hänen F1-uransa paras lähtöruutu. Kilpailun harjoituksissa hän oli koko joukon nopein.[2] Kilpailussa hän joutui kuitenkin keskeyttämään moottorin hajottua. Kanadan GP:ssa Järvilehdon lähtöruutu oli vasta 20:s, mutta hän onnistui ajamaan seitsemänneksi ja nousi pistesijalle kuudenneksi Christian Fittipaldin hylkäyksen myötä. Pistesija oli Järvilehdon viimeinen. Tallipäällikkö Flavio Briatore päätti kuitenkin siirtää hänet sivuun kilpailemisesta, ja Verstappen korvasi hänet. Benettonin tapaa kohdella Järvilehtoa on kritisoitu paljonkin,kenen mukaan? sillä sen katsottiin panostavan pelkästään Michael Schumacherin mestaruuteen. Järvilehto pääsi vielä kahden kilpailun ajaksi Benettonin rattiin, kun Michael Schumacher kärsi kilpailukieltoaan. Lupaavalta kuulostanut Benetton-pesti jäi vain kuuden kilpailun mittaiseksi, ja hän saavutti vain yhden pisteen autolla. Kauden kaksi viimeistä kilpailua Järvilehto ajoi Sauberilla. Hän sijoittui yhdellä pisteellään MM-sarjassa sijalle 24.</p><h4>Myöhempiä mietteitä</h4><p id="etusivuTeksti">Benettonin tapaa kohdella Järvilehtoa vuoden 1994 onnettomuuden jälkeen on arvosteltu paljon. Entisen F1-kuljettajan Jonathan Palmerin mielestä sen sijaan oli Benetton-tallilta tuhlausta, että he antoivat kaudella 1994 toisen autoista Järvilehdolle. Entisen Benettonin tallipäällikkö Flavio Briatore kertoi vuonna 2007 ottaneensa Järvilehdon talliinsa suurena lupauksena. Hänen mukaansa JJ ei oikeastaan edes saanut mahdollisuutta ajaa heillä kilpaa onnettomuuden takia.Järvilehto on sanonut palanneensa liian aikaisin auton rattiin onnettomuutensa jälkeen. Hän sanoi olleensa täysin kunnossa vasta runsas vuosi tapahtuman jälkeen Le Mansin 24 tunnin ajossa. Benettonin autosta löydettiin monia apuvälineitä, kuten luistonesto, jotka oli kielletty kaudeksi 1994. Tallin mukaan apuvälineitä käytettiin pelkästään testeissä, eikä FIA pystynyt todistamaan niiden laitonta käyttöä kilpailuissa. Onkin epäilty, että Schumacherin autossa olisi ollut monia apuvälineitä, joita ei olisi ollut Järvilehdon ja Verstappenin autoissa.</p></div>\
       	</div>\
       </div>';
+      var jyrkiHTMLen =
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/JJLehto/jjlehto.jpg" class="profiilikuva"/><h3>Jyrki Juhani Järvilehto, nicknamed JJ Lehto, (Born 31. January 1966 Espoo).\
+                </h3><p id="etusivuTeksti">Järvilehtos F1 career began in 1989 under the management of Keke Rosberg, when he first became a test driver for Ferrari and then a racing driver for Onyx at the end of the season. He signed a test contract with Ferrari in March 1989.[15] He even had a chance to race for Ferrari after Gerhard Berger was badly injured in the San Marino GP. However, he was considered too inexperienced for the job, and so Osella driver Piercarlo Ghinzan was drafted in to replace Berger. Järvilehdo was supposed to replace Ghinzani in the Osella team, but after Bergers surprisingly quick recovery, no replacement was needed. After Belgian Bertrand Gachots dispute with his Onyx team, a seat opened up and Keke Rosberg was able to negotiate a place for Järvilehto for the last four races of the season. His team-mate was the rather experienced Swede Stefan Johansson. The Portuguese GP was Järvilehtos first GP, but the race ended in qualifying. For a while it looked as if he would have made it through to qualifying, but the rear suspension of the car broke. Helsingin Sanomat reported the incident with the headline "Car breakdown ruined qualifying". In the Spanish GP that followed, Järvilehto made it to the grid, but the race ended with a gearbox failure. His team-mate Johansson, on the other hand, made it to the podium after finishing third.In Japan, Järvilehtos races were already left to qualifying. As the Japanese GP was held on the same weekend as the last race in the F3000 series, he did not take part in the F3000 race. In the season-ending Australian GP, Järvilehto again made it to the grid. A very rainy Australian GP highlighted Järvilehtos rain-globe skills. Starting from grid 17, Järvilehto caused a red flag at the first start, but once the race got underway he steadily improved his position and soon found himself in fifth place. However, the cars electronics failed and he was forced to retire from a good position after 27 laps. Before him, however, the famous Ayrton Senna, Nigel Mansell and Gerhard Berger were among those to retire. Järvilehto later reckoned he even had a chance of winning a podium, but said the race was "just one of hundreds". In the 1990 season, the team and the team-mate were the same. In the first two races, the Onyx ORE-1 car from the previous season was used. Järvilehdos races in the USA and Brazil were limited to qualifying, but when the new ORE-2 car was introduced, the qualifying races were sometimes survived. In the San Marino GP Järvilehto managed to finish 12th, the first race Järvilehto finished, but in the other races the journey ended in either qualification, retirement or no finish.Onyx withdrew from the series after the Hungarian round, which meant that Järvilehto could not participate in the last six races of the season. Johansson, on the other hand, did not race after the first two races, and Järvilehtos team-mate was replaced by Gregor Foitek. For the 1991 season Järvilehto moved to the small Scuderia Italia team. His team-mate was the Italian Emanuele Pirro, who had already driven for the team in the 1990 season. The season was full of interruptions for Järvilehto, and there were already problems in the pre-season tests. In the third race of the season, at San Marino, he managed to climb the podium after finishing third, after many drivers had been forced to retire due to the wet track. In the process, he scored the first points of his F1 career, becoming the second Finn to have been on the podium and scored points in an F1 race. It was also the first race in which two Finns finished in the points, with Mika Häkkinen fifth. He did not score any further points during the season. He finished 12th in the Drivers Championship with four World Championship points.Järvilehtos World Championship finish was his best. For the 1992 season Järvilehto continued with Scuderia Italia. His team-mate was the Italian Pierluigi Martini. Although Järvilehto did not suffer as many retirements as in the 1991 season, he did not manage to score any points. The car was not very good, and after a difficult Monaco race Järvilehto stated in Autocource 1992-93 "SSDD - same shit, different day".Järvilehtos best finish of the season was seventh in Belgium. Martini, on the other hand, managed two sixth place finishes to score two points. For the 1993 season Järvilehto moved to the new Swiss Sauber team, where he was partnered by Austrian Karl Wendlinger. Starting from sixth on the grid in the season-opening South African GP, Järvilehto managed to finish fifth and scored two World Championship points. However, he was two laps down and the last driver to finish. Järvilehto still managed to score points in the San Marino race, where he finished fourth. The result was Järvilehtos second best. Right at the end of the race his engine broke down, but as no one was on the same lap as him, he did not lose any positions. He managed to finish in the top ten five times in the final part of the season, but scored no more points. For the whole season he scored 5 points and finished thirteenth in the Drivers Championship.In terms of World Championship points, it was Järvilehtos best season. Things seemed to have taken a turn for the better when Järvilehto was offered a driving position by top team Benetton for the 1994 season. The team was looking for a suitable driver to partner Michael Schumacher at the turn of the year through testing. A total of five drivers took part in the tests, one of whom was Järvilehto. Michele Alboreto, who would have brought a considerable amount of sponsorship money to the team, was considered the main favourite. However, Järvilehto performed so well in the tests that it was decided to take him on board. Before the season started in January, however, Järvilehto had a serious testing accident at the Silverstone circuit. He was testing the new suspension on the Benetton B194 car when he crashed into the edge of the track at the Stowe mud at the end of the Hangar straight, rear-end first, and seriously injured his neck. His spinal cord was shattered and death was imminent. All he remembered of the accident was that he was lying on his back, unable to move his arms or legs. He was first taken to Northampton Hospital, where he was diagnosed only as having a broken neck. He was late taken to the Clinical Centre, a private hospital in London. He was operated on the following day by a neck specialist, Dr OBrien. The operation was performed through the throat and lasted eight hours in total. Initially, there was reluctance to disclose the seriousness of the incident, partly because of sponsorship negotiations, but it could not be kept secret for long. After the operation, Järvilehto went to Mauritius to recover. He said that the pain was unbearable and that he was not comfortable in any position. Later, Järvilehto has regretted his decision to go on a convalescent holiday to Mauritius. He tried unsuccessfully to get himself fit by walking, and it was difficult, especially at first. Doctors said he would be back to normal after six months, but after only eight weeks he was testing an F1 car. Järvilehto said that the incident did not cause any particular fear, but that it was always on his mind. He had to sit out the first two races of the season, where he was replaced by Dutchman Jos Verstappen. Järvilehto himself had no recollection of the incident, but he thought the accident was caused by excessive speed. He has also speculated that sub-cooled water or a broken car may have contributed to the incident. Järvilehto later thought that in newer cars his neck would not have been broken because the cab edges had been raised after the 1994 season. The San Marino GP in Imola was Järvilehtos first race of the season. Before the race, he had been unable to drive even half a day of testing due to pain. In practice, the pain was still enormous and he could not support his head properly during the ride due to the poor condition of his neck muscles. In San Marino he was shocked again. Järvilehtos good friend Roland Ratzenberger was killed in qualifying as a result of a bad crash. They had dined together the day before and had come to Imola in the same car. For Järvilehto, the race ended on the grid as he could not get going. In addition, Lotus driver Pedro Lamy drove hard after him. Järvilehto, who was watching the race from the pits, soon experienced another shock: Ayrton Senna had his fatal crash. His mental recovery is said to have bottomed out at this point. In the next race, the Monaco GP, Järvilehto failed to score any points. However, he managed to finish seventh, which looked promising. The truth was quite different: his neck hurt all the time and he couldnt hold his head up...</p></div>\
+      	</div>\
+      </div>';
       var hakkinenHTML =
-        '<div class="col-sm-10 p-3 bg-light">\
-      	<div>\<img src="kirjasto/MikaHakkinen/hakkinen.jpg" class="profiilikuva1"/><h3>Mika Pauli Häkkinen (s. 28. syyskuuta 1968 Helsingin maalaiskunta)</h3><p id="etusivuTeksti"></p><h4>Lotus-vuodet 1991–1992</h4><p id="etusivuTeksti">Häkkisen esitykset F3-sarjassa vakuuttivat Lotus-tallin tallipäällikön, Peter Collinsin, joka otti Häkkisen talliinsa kaudelle 1991, ja Häkkinen teki tuohon aikaan epätavallisen loikan F3:sta suoraan F1:een. Hän onnistui debyyttikaudellaan kilpailukyvyttömällä autolla hyvin, parhaina suorituksina ensimmäisten aika-ajojen 13. sija ja ensimmäiset MM-pisteet San Marinon GP:stä viidennellä sijallaan. Kaudella 1992 Häkkinen teki varsinaisen läpimurtonsa: Lotus sai tehtyä autostaan huomattavasti kilpailukykyisemmän, ja Häkkinen ajoi pisteille kuudessa kilpailussa ja saavutti Ranskan ja Unkarin kilpailuissa neljännen sijan. Hän saavutti yhteensä 11 MM-pistettä ja MM-sarjan kahdeksannen sijan, mikä vakuutti myös huipputallit mukaan lukien tuon ajan ykköstallin, Williamsin. Sopimus Williamsin kanssa kuitenkin kariutui, kun talli jätti ilmoittautumatta ajoissa kauden 1993 MM-sarjaan, jolloin sen oli sarjaan päästäkseen saatava muiden tallien yksimielinen tuki: Lotus-tallin tallipäällikkö Collins halusi pitää Häkkisen tallissaan, ja sopimus jäi allekirjoittamatta.</p><h4>McLaren-vuodet 1993–2001</h4><p id="etusivuTeksti">Häkkinen löysi paikkansa kaudelle 1993 McLaren-tallissa, jossa hän kuitenkin jäi testikuljettajan rooliin, kun tallin ykköskuljettaja Ayrton Senna päätti empimisistään huolimatta ajaa tallin kilpakuljettajana. Häkkinen kuitenkin pääsi kilpakuljettajaksi, kun kaudella flopannut Michael Andretti luovutti paikkansa kauden kolmeen viimeiseen kilpailuun. Häkkinen sijoittui Estorilin aika-ajoissa tuolloin parhaana aika-ajajana pidetyn tallikaveri Sennan edelle. Itse kisassa Alesin ohitusyrityksessä lähtösuoran alussa McLaren valui ulos radalta ja sinkoutui radan yli varikkomuuriin, seurauksena romua ja kisan keskeytys. Seuraavassa kilpailussa, Japanin GP:ssä Suzukassa, hän pääsi ensimmäistä kertaa palkintokorokkeelle sijoittumalla kolmanneksi. Kauden päätöskisa Adelaidessa päättyi tekniikkaongelman vuoksi keskeytykseen. Sennan lähdettyä McLarenilta, tuli Häkkisestä tallin selvä ykköskuljettaja kahdeksi seuraavaksi kaudeksi. Kaudella 1994 Häkkinen suoriutui hienosti epäluotettavalla McLaren–Peugeotilla ajamalla kuudesti palkintokorokkeelle ja Belgian GP:ssä toiseksi. Hän sijoittui 26 pisteellään MM-sarjan neljänneksi. Häkkinen ajoi Japanin GP:tä lukuun ottamatta jokaisessa maaliin ajamassaan kilpailussa palkintokorokkeelle. Seuraavasta kaudesta 1995, Mercedes-Benzin ensimmäisestä McLarenin moottorinvalmistajana, tuli vaikea, ja Häkkisen huippuhetkiksi jäivät kakkossijat Italian ja Japanin GP:issä. Häkkisen kärsimätön voitonjano näkyi useissa kauden aikana sattuneissa ulosajoissa ja kolareissa. Kauden 1995 päättäneen Australian GP:n ensimmäisissä aika-ajoissa Adelaiden katuradalla Häkkinen ajoi rajusti ulos Brewery Bend -kaarteessa vasemman takarenkaan tyhjentymisen takia. Häkkisen auto päätyi noin 200 kilometrin tuntinopeudella rengasvalliin. Häkkisen pää paiskautui valtavalla voimalla auton ohjauspyörään ja poukkoili holtittomasti edestakaisin. Häkkinen sai vakavia niskavammoja sekä kallonmurtuman. Hän vajosi koomaan. Häkkinen kuitenkin selvisi onnettomuudesta ja toipui jo seuraavan kauden ensimmäiseen, Melbournessa ajettuun kilpailuun. Häkkinen osoitti kilpailukykynsä vakavan onnettomuuden jälkeen ajamalla läpi kauden 1996 tuoretta tallikaveriaan, David Coulthardia, paremmin sijoittumalla loppukaudesta neljästi kolmanneksi, keräämällä 31 MM-pistettä ja MM-pisteiden viidennen sijan. Kaudella 1997 epäluotettava auto ja erityisesti moottoririkot vaivasivat Häkkistä: hän joutui keskeyttämään moottoririkon vuoksi johtopaikalta niin Britannian, Itävallan kuin Luxemburgin GP:nkin Nürburgringillä, jossa hän myös ajoi uransa ensimmäisen paalupaikan. Häkkinen kuitenkin voitti ensimmäisen kilpailunsa kauden päättäneessä Euroopan GP:ssä Jerezissä, kun ensin tallikaveri Coulthard ja mestaruuteen kurvaileva Williamsin Jacques Villeneuve antoivat hänelle tietä. Kyseessä oli ensimmäinen suomalaiskuljettajan GP-voitto 12 vuoteen, edellisen voiton otti Keke Rosberg Australian GP:ssä 1985. Kaudella 1998 Häkkinen kävi ensimmäisen mestaruustaistonsa Ferrari-tallin Michael Schumacheria vastaan. Kausi olikin näiden kuljettajien näytöstä: vain kahdesti kauden aikana voitto meni muulle kuljettajalle. Värikäs mestaruustaisto sai huipentumansa, kun kaksi GP:tä ennen kauden loppua kuljettajat olivat tasapisteissä. Mestaruustaisto kääntyi Häkkisen eduksi, kun hän voitti kaksintaistelun Schumacheria vastaan Luxemburgin GP:ssä, ja kauden päättävässä Japanin GP:ssä Schumacherin auto sammui ykkösruutuun. Viimeiseen ruutuun pudotetun Schumacherin kilpailu päättyi rengasrikkoon, Häkkinen voitti kilpailun ja ensimmäisen maailmanmestaruutensa. Häkkinen voitti kauden aikana kahdeksan GP:tä ja lähti yhdeksän kertaa paalupaikalta. Suomessa hänet valittiin vuoden urheilijaksi. Kausi 1999 oli sen puoliväliin asti jälleen mestaruustaistoa Häkkisen ja Schumacherin välillä. Britannian GP:ssä tilanne kuitenkin muuttui, kun Schumacher loukkaantui ulosajossa, ja Ferrarin kakkoskuljettaja Eddie Irvine aloitti taistelunsa mestaruudesta Häkkisen kanssa. Vaikka Häkkinen hallitsi aika-ajoja suvereenisti starttaamalla paalulta 11:ssä kauden 17:stä osakilpailusta, tuli mestaruustaistosta tiukka Häkkisen keskeytettyä omaan ajovirheeseen molemmissa Italiassa ajetuissa osakilpailuissa, Imolassa ja Monzassa,ja tallin tehdessä virheitä – muun muassa Britannian GP:ssä – kun Häkkisen kilpailu jäi kesken renkaan irrottua. Kauden toiseksi viimeisen kilpailun, Malesian GP:n, jälkeen Häkkinen ehdittiin kuitenkin jo julistaa maailmanmestariksi, kun Ferrari-tallin kaksoisvoitto hylättiin sääntöjenvastaisen ilmanohjaimen vuoksi ja kolmanneksi sijoittunut Häkkinen nostettiin voittajaksi. Tulokset palautettiin kuitenkin ennalleen, joten Irvine johti MM-sarjaa ennen viimeistä kilpailua, ja Häkkiseltä vaadittiin mestaruuteen voitto kauden päättävästä Japanin GP:stä. Sen Häkkinen myös teki ja voitti uransa toisen mestaruuden.</p><h4>Mestaruuksien jälkeen</h4><p id="etusivuTeksti">Kausi 2000 lähti Häkkiseltä vaihtelevasti käyntiin hänen keskeytettyä kauden kaksi ensimmäistä kilpailua Schumacherin hallitessa alkukautta. Schumacherin keskeytettyä kauden puolivälissä kolme kilpailua Häkkinen pääsi hänen kantaansa voittamalla kilpailun ja sijoittumalla kahdesti toiseksi ja siirtyi MM-pistejohtoon kahden seuraavan kilpailun loisteliaalla voitollaan. Vielä kolme kilpailua ennen kauden päätöstä Häkkinen johti kahdella pisteellä Schumacheria, mutta Yhdysvaltain GP:n moottoririkko oli takaisku hänen MM-haaveilleen, ja Schumacherin voitettua myös Japanin GP:n hän voitti maailmanmestaruuden. Häkkinen jäi MM-pisteissä toiseksi. Vuonna 2001 McLarenin tallipäällikkö Ron Dennis sanoi auton luotettavuusongelmien maksaneen Häkkiselle mestaruuden. Häkkisen viimeinen kilpailukausi 2001 oli vaikea. McLarenin ongelmat tuntuivat kasautuvan Häkkisen päälle, josta osoituksena dramaattinen keskeytys ylivoimaisesta johtoasemasta kytkinrikkoon Espanjan GP:n viimeisellä kierroksella. Ferrarin tekninen etumatka etenkin automaattisessa lähtöjärjestelmässä antoi sille huomattavan edun kilpailijoihinsa, ja lehdistö aloitti spekulaatiot Häkkisen lopettamisesta. Häkkinen voitti kauden aikana kaksi kilpailua: Britannian GP:n ja kauden toiseksi viimeisenä ajetun Yhdysvaltain GP:n. Kauden loppupuolella Häkkinen ilmoitti siirtyvänsä vuoden sapattivapaalle F1:stä, ja hänen tuuraajakseen palkattiin toinen suomalainen Kimi Räikkönen. Häkkinen ei kuitenkaan koskaan palannut sapattivapaaltaan, vaikka hänen paluustaan kaudelle 2005 huhuttiin vahvasti.</p></div>\
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/MikaHakkinen/hakkinen.jpg" class="profiilikuva1"/><h3>Mika Pauli Häkkinen (s. 28. syyskuuta 1968 Helsingin maalaiskunta)</h3><p id="etusivuTeksti"></p><h4>Lotus-vuodet 1991–1992</h4><p id="etusivuTeksti">Häkkisen esitykset F3-sarjassa vakuuttivat Lotus-tallin tallipäällikön, Peter Collinsin, joka otti Häkkisen talliinsa kaudelle 1991, ja Häkkinen teki tuohon aikaan epätavallisen loikan F3:sta suoraan F1:een. Hän onnistui debyyttikaudellaan kilpailukyvyttömällä autolla hyvin, parhaina suorituksina ensimmäisten aika-ajojen 13. sija ja ensimmäiset MM-pisteet San Marinon GP:stä viidennellä sijallaan. Kaudella 1992 Häkkinen teki varsinaisen läpimurtonsa: Lotus sai tehtyä autostaan huomattavasti kilpailukykyisemmän, ja Häkkinen ajoi pisteille kuudessa kilpailussa ja saavutti Ranskan ja Unkarin kilpailuissa neljännen sijan. Hän saavutti yhteensä 11 MM-pistettä ja MM-sarjan kahdeksannen sijan, mikä vakuutti myös huipputallit mukaan lukien tuon ajan ykköstallin, Williamsin. Sopimus Williamsin kanssa kuitenkin kariutui, kun talli jätti ilmoittautumatta ajoissa kauden 1993 MM-sarjaan, jolloin sen oli sarjaan päästäkseen saatava muiden tallien yksimielinen tuki: Lotus-tallin tallipäällikkö Collins halusi pitää Häkkisen tallissaan, ja sopimus jäi allekirjoittamatta.</p><h4>McLaren-vuodet 1993–2001</h4><p id="etusivuTeksti">Häkkinen löysi paikkansa kaudelle 1993 McLaren-tallissa, jossa hän kuitenkin jäi testikuljettajan rooliin, kun tallin ykköskuljettaja Ayrton Senna päätti empimisistään huolimatta ajaa tallin kilpakuljettajana. Häkkinen kuitenkin pääsi kilpakuljettajaksi, kun kaudella flopannut Michael Andretti luovutti paikkansa kauden kolmeen viimeiseen kilpailuun. Häkkinen sijoittui Estorilin aika-ajoissa tuolloin parhaana aika-ajajana pidetyn tallikaveri Sennan edelle. Itse kisassa Alesin ohitusyrityksessä lähtösuoran alussa McLaren valui ulos radalta ja sinkoutui radan yli varikkomuuriin, seurauksena romua ja kisan keskeytys. Seuraavassa kilpailussa, Japanin GP:ssä Suzukassa, hän pääsi ensimmäistä kertaa palkintokorokkeelle sijoittumalla kolmanneksi. Kauden päätöskisa Adelaidessa päättyi tekniikkaongelman vuoksi keskeytykseen. Sennan lähdettyä McLarenilta, tuli Häkkisestä tallin selvä ykköskuljettaja kahdeksi seuraavaksi kaudeksi. Kaudella 1994 Häkkinen suoriutui hienosti epäluotettavalla McLaren–Peugeotilla ajamalla kuudesti palkintokorokkeelle ja Belgian GP:ssä toiseksi. Hän sijoittui 26 pisteellään MM-sarjan neljänneksi. Häkkinen ajoi Japanin GP:tä lukuun ottamatta jokaisessa maaliin ajamassaan kilpailussa palkintokorokkeelle. Seuraavasta kaudesta 1995, Mercedes-Benzin ensimmäisestä McLarenin moottorinvalmistajana, tuli vaikea, ja Häkkisen huippuhetkiksi jäivät kakkossijat Italian ja Japanin GP:issä. Häkkisen kärsimätön voitonjano näkyi useissa kauden aikana sattuneissa ulosajoissa ja kolareissa. Kauden 1995 päättäneen Australian GP:n ensimmäisissä aika-ajoissa Adelaiden katuradalla Häkkinen ajoi rajusti ulos Brewery Bend -kaarteessa vasemman takarenkaan tyhjentymisen takia. Häkkisen auto päätyi noin 200 kilometrin tuntinopeudella rengasvalliin. Häkkisen pää paiskautui valtavalla voimalla auton ohjauspyörään ja poukkoili holtittomasti edestakaisin. Häkkinen sai vakavia niskavammoja sekä kallonmurtuman. Hän vajosi koomaan. Häkkinen kuitenkin selvisi onnettomuudesta ja toipui jo seuraavan kauden ensimmäiseen, Melbournessa ajettuun kilpailuun. Häkkinen osoitti kilpailukykynsä vakavan onnettomuuden jälkeen ajamalla läpi kauden 1996 tuoretta tallikaveriaan, David Coulthardia, paremmin sijoittumalla loppukaudesta neljästi kolmanneksi, keräämällä 31 MM-pistettä ja MM-pisteiden viidennen sijan. Kaudella 1997 epäluotettava auto ja erityisesti moottoririkot vaivasivat Häkkistä: hän joutui keskeyttämään moottoririkon vuoksi johtopaikalta niin Britannian, Itävallan kuin Luxemburgin GP:nkin Nürburgringillä, jossa hän myös ajoi uransa ensimmäisen paalupaikan. Häkkinen kuitenkin voitti ensimmäisen kilpailunsa kauden päättäneessä Euroopan GP:ssä Jerezissä, kun ensin tallikaveri Coulthard ja mestaruuteen kurvaileva Williamsin Jacques Villeneuve antoivat hänelle tietä. Kyseessä oli ensimmäinen suomalaiskuljettajan GP-voitto 12 vuoteen, edellisen voiton otti Keke Rosberg Australian GP:ssä 1985. Kaudella 1998 Häkkinen kävi ensimmäisen mestaruustaistonsa Ferrari-tallin Michael Schumacheria vastaan. Kausi olikin näiden kuljettajien näytöstä: vain kahdesti kauden aikana voitto meni muulle kuljettajalle. Värikäs mestaruustaisto sai huipentumansa, kun kaksi GP:tä ennen kauden loppua kuljettajat olivat tasapisteissä. Mestaruustaisto kääntyi Häkkisen eduksi, kun hän voitti kaksintaistelun Schumacheria vastaan Luxemburgin GP:ssä, ja kauden päättävässä Japanin GP:ssä Schumacherin auto sammui ykkösruutuun. Viimeiseen ruutuun pudotetun Schumacherin kilpailu päättyi rengasrikkoon, Häkkinen voitti kilpailun ja ensimmäisen maailmanmestaruutensa. Häkkinen voitti kauden aikana kahdeksan GP:tä ja lähti yhdeksän kertaa paalupaikalta. Suomessa hänet valittiin vuoden urheilijaksi. Kausi 1999 oli sen puoliväliin asti jälleen mestaruustaistoa Häkkisen ja Schumacherin välillä. Britannian GP:ssä tilanne kuitenkin muuttui, kun Schumacher loukkaantui ulosajossa, ja Ferrarin kakkoskuljettaja Eddie Irvine aloitti taistelunsa mestaruudesta Häkkisen kanssa. Vaikka Häkkinen hallitsi aika-ajoja suvereenisti starttaamalla paalulta 11:ssä kauden 17:stä osakilpailusta, tuli mestaruustaistosta tiukka Häkkisen keskeytettyä omaan ajovirheeseen molemmissa Italiassa ajetuissa osakilpailuissa, Imolassa ja Monzassa,ja tallin tehdessä virheitä – muun muassa Britannian GP:ssä – kun Häkkisen kilpailu jäi kesken renkaan irrottua. Kauden toiseksi viimeisen kilpailun, Malesian GP:n, jälkeen Häkkinen ehdittiin kuitenkin jo julistaa maailmanmestariksi, kun Ferrari-tallin kaksoisvoitto hylättiin sääntöjenvastaisen ilmanohjaimen vuoksi ja kolmanneksi sijoittunut Häkkinen nostettiin voittajaksi. Tulokset palautettiin kuitenkin ennalleen, joten Irvine johti MM-sarjaa ennen viimeistä kilpailua, ja Häkkiseltä vaadittiin mestaruuteen voitto kauden päättävästä Japanin GP:stä. Sen Häkkinen myös teki ja voitti uransa toisen mestaruuden.</p><h4>Mestaruuksien jälkeen</h4><p id="etusivuTeksti">Kausi 2000 lähti Häkkiseltä vaihtelevasti käyntiin hänen keskeytettyä kauden kaksi ensimmäistä kilpailua Schumacherin hallitessa alkukautta. Schumacherin keskeytettyä kauden puolivälissä kolme kilpailua Häkkinen pääsi hänen kantaansa voittamalla kilpailun ja sijoittumalla kahdesti toiseksi ja siirtyi MM-pistejohtoon kahden seuraavan kilpailun loisteliaalla voitollaan. Vielä kolme kilpailua ennen kauden päätöstä Häkkinen johti kahdella pisteellä Schumacheria, mutta Yhdysvaltain GP:n moottoririkko oli takaisku hänen MM-haaveilleen, ja Schumacherin voitettua myös Japanin GP:n hän voitti maailmanmestaruuden. Häkkinen jäi MM-pisteissä toiseksi. Vuonna 2001 McLarenin tallipäällikkö Ron Dennis sanoi auton luotettavuusongelmien maksaneen Häkkiselle mestaruuden. Häkkisen viimeinen kilpailukausi 2001 oli vaikea. McLarenin ongelmat tuntuivat kasautuvan Häkkisen päälle, josta osoituksena dramaattinen keskeytys ylivoimaisesta johtoasemasta kytkinrikkoon Espanjan GP:n viimeisellä kierroksella. Ferrarin tekninen etumatka etenkin automaattisessa lähtöjärjestelmässä antoi sille huomattavan edun kilpailijoihinsa, ja lehdistö aloitti spekulaatiot Häkkisen lopettamisesta. Häkkinen voitti kauden aikana kaksi kilpailua: Britannian GP:n ja kauden toiseksi viimeisenä ajetun Yhdysvaltain GP:n. Kauden loppupuolella Häkkinen ilmoitti siirtyvänsä vuoden sapattivapaalle F1:stä, ja hänen tuuraajakseen palkattiin toinen suomalainen Kimi Räikkönen. Häkkinen ei kuitenkaan koskaan palannut sapattivapaaltaan, vaikka hänen paluustaan kaudelle 2005 huhuttiin vahvasti.</p></div>\
+      	</div>\
+      </div>';
+      var hakkinenHTMLen =
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/MikaHakkinen/hakkinen.jpg" class="profiilikuva1"/><h3>Mika Pauli Häkkinen (Born 28. September 1968 Helsinki)</h3><p id="etusivuTeksti">Häkkinens Formula 1 career began in 1991, when he got to race for Lotus. Although the first time Häkkinen tried an F1 car, it was a Benetton.Häkkinens performances in F3 convinced Lotus team manager Peter Collins, who took Häkkinen on board for the 1991 season, and Häkkinen made the unusual leap from F3 straight into F1 at that time. He did well in his debut season in a non-competitive car, with his best performances being 13th place in the first qualifying session and his first World Championship points from the San Marino GP in fifth place.The 1992 season saw Häkkinens real breakthrough: Lotus made the car much more competitive, and Häkkinen scored points in six races, finishing fourth in France and Hungary. He scored a total of 11 World Championship points and finished eighth in the World Championship series, a result that also impressed the top teams, including the number one team at the time, Williams. However, the contract with Williams fell through when the team failed to register in time for the 1993 World Championship, which required the unanimous support of the other teams to qualify: Lotus team manager Collins wanted to keep Häkkinen in his team and the contract was not signedHäkkinen found his place for the 1993 season at McLaren, but he remained as a test driver when the teams number one driver, Ayrton Senna, decided to drive for the team as a racing driver, despite his hesitations. Häkkinen did, however, become a racing driver when Michael Andretti, who had flopped during the season, gave up his place for the last three races of the season. Häkkinen finished ahead of his team-mate Senna, who was considered the best qualifier at the time, in the Estoril qualifying. In the race itself, during an attempt to overtake Ales at the start of the start straight, the McLaren spun off the track and was thrown over the track into the pit wall, causing a wreck and stopping the race. In the next race, the Japanese GP in Suzuka, he made it to the podium for the first time, finishing third. The final race of the season in Adelaide ended in retirement due to a technical problem.After Senna left McLaren, Häkkinen became the teams clear number one driver for the next two seasons. In the 1994 season, Häkkinen performed superbly in the unreliable McLaren-Peugeot, finishing on the podium six times and second in the Belgian GP. He finished fourth in the World Championship with 26 points. With the exception of the Japanese GP, Häkkinen finished on the podium in every race he finished. The following season in 1995, Mercedes-Benzs first as McLarens engine supplier, proved to be a difficult one, with Häkkinens highlights being second places in the Italian and Japanese GPs. Häkkinens impatient thirst for victory was reflected in a number of crashes and accidents during the season.In the first qualifying session of the season-ending 1995 Australian GP at the Adelaide circuit, Häkkinen crashed out hard at Brewery Bend due to a left rear tyre puncture. Häkkinens car ended up in the tyre wall at around 200 kilometres per hour. Häkkinens head slammed into the steering wheel with tremendous force and he was bouncing back and forth uncontrollably. Häkkinen suffered serious neck injuries and a fractured skull. He lapsed into a coma. However, Häkkinen survived the accident and recovered in time for the first race of the following season in Melbourne. Häkkinen proved his competitiveness after the serious accident by racing better than his fresh team-mate David Coulthard throughout the 1996 season, finishing third four times in the final season, scoring 31 World Championship points and finishing fifth in the World Championship points. In 1997, Häkkinen was plagued by an unreliable car and, in particular, engine trouble: he was forced to retire from the lead at the British, Austrian and Luxembourg GPs at the Nürburgring, where he also took the first pole position of his career. However, Häkkinen won his first race in the season-ending European GP at Jerez, after being held back by team-mate Coulthard and championship-chasing Williams driver Jacques Villeneuve. It was the first GP win for a Finnish driver in 12 years, the previous victory coming from Keke Rosberg in the 1985 Australian GP. In the 1998 season, Häkkinen fought his first championship battle against Ferraris Michael Schumacher. The season was a showcase for these drivers: only twice during the season did victory go to another driver. The colourful championship battle reached its climax when, two GPs before the end of the season, the drivers were tied. The championship battle turned in Häkkinens favour when he won a duel against Schumacher at the Luxembourg GP, and in the season-ending Japanese GP Schumachers car went out on the grid. Schumacher, who was dropped to the last grid position, suffered a puncture and Häkkinen won the race and his first world championship. Häkkinen won eight GPs during the season and started from pole position nine times. In Finland, he was named Sportsman of the Year. Until the middle of the 1999 season, Häkkinen and Schumacher were again in a title race...</p></div>\
       	</div>\
       </div>';
       var saloHTML =
-        '<div class="col-sm-10 p-3 bg-light">\
-      	<div>\<img src="kirjasto/MikaSalo/salo.jpg" class="profiilikuva"/><h3>Mika Juhani Salo (s. 30. marraskuuta 1966 Helsinki)</h3><h4>F1-uran ensimmäiset vuodet</h4><p id="etusivuTeksti">Loppukaudesta 1994 Salon haave täyttyi, kun hän pääsi ajamaan Formula 1:ssä Lotus-tallin autolla. Lotus oli aiemmin ajautunut vakaviin rahoitusongelmiin sekä selvitystilaan, ja muun muassa henkilöstön palkkoja oli maksamatta. Salo onnistui keräämään tukijoiltaan kokoon useita miljoonia jenejä. Salo sijoittui ensimmäisessä kilpailussaan Japanin GP:ssä kymmenenneksi ja kauden viimeisessä kilpailussa Australiassa hän keskeytti. Nämä olivat samalla Lotuksen viimeiset osakilpailut. Kausina 1995–1997 Salo kilpaili Tyrrell-tallin heikolla kalustolla ja sai kerättyä yhteensä 12 pistettä. Kausi 1996 oli Tyrrell-kausista Salon paras. Kauden 1998 Salo ajoi Arrows-tallissa, jossa hän parhaimmillaan taisteli palkintokorokesijoituksesta Monacon GP:ssä Eddie Irvinen kanssa, mutta sijoittui lopulta neljänneksi, joka oli siihen astisista kilpailuista Salon paras.</p><h4>Tuuraajana BAR:lla ja Ferrarilla</h4><p id="etusivuTeksti">Kaudelle 1999 Salo jäi ilman tallipaikkaa Arrowsin purettua yllättäen hänen sopimuksensa. Salo pääsi kuitenkin ajamaan San Marinon, Espanjan sekä Monacon kilpailuissa tulokastalli BAR:n kalustolla, kun Ricardo Zonta oli loukkaantuneena. Espanjassa hän sai kunnian olla ensimmäinen kuljettaja, joka toi BAR-tallin auton maaliin saakka (8. sija). Kolmen kisan pestin jälkeen Salo jäi jälleen ilman F1-töitä, kunnes kauden kahdeksannen kilpailun jälkeen Ferrari palkkasi hänet loukkaantuneen Michael Schumacherin tuuraajaksi. Schumacher oli loukkaantunut Britannian GP:ssä, ja Ferrari päätti palkata tuuraajaksi BAR-tallissa hyvää työtä tehneen Salon. Tämä oli ensimmäinen kerta, kun Salo pääsi ajamaan huippukalustolla Formula 1 -sarjassa. Hänen tehtävänään oli toimia mestaruudesta taistelleen Eddie Irvinen tukena. Salo ajoi Ferrarilla yhteensä kuusi osakilpailua, kohokohtanaan Saksan GP, jossa hän sijoittui toiseksi. Hän oli sijoittunut aika-ajoissa neljänneksi ja nousi lähdössä toiseksi Mika Häkkisen perään. Ajettuaan Häkkistä nopeampia kierrosaikoja, eron kavennuttua ja lopulta Häkkisen keskeytettyä Salo johti kilpailua, mutta joutui päästämään tallimääräyksellä toisena ajaneen Eddie Irvinen edelleen. Kilpailun jälkeen Irvine kuitenkin luovutti kiitollisuudesta ykköspalkintonsa voittotaistelun suosiolla luovuttaneelle Salolle. Salo nousi palkintokorokkeelle vielä Italian GP:ssä, jossa hän sijoittui kolmanneksi. Muissa kilpailuissa hän jäi ilman pisteitä ja saavutetut palkintosijat jäivät Salon F1-uran ainoiksi.</p><h4>Viimeiset vuodet F1:ssä</h4><p id="etusivuTeksti">Kaudelle 2000 Salo siirtyi Sauber-talliin. Hän sijoittui parhaimmillaan Monacon- ja Saksan GP:eissä viidenneksi lisäksi Salo oli kahdesti kuudes, keräsi yhteensä kuusi MM-pistettä ja peittosi näin pisteittä jääneen tallikaverinsa Pedro Dinizin. Vuodeksi 2001 Salo päätti ottaa vastaan haasteen ja siirtyi testaamaan uuden, lähes tyhjältä pohjalta aloittaneen Toyotan F1-tallin autoa. Vuoden testaamisen jälkeen Toyota aloitti kilpailemaan kaudella 2002. Salo nappasi uudelle tallille heti ensimmäisessä kilpailussa Australiassa yhden pisteen sijoittumalla kuudenneksi, ja hän toisti tämän sijoituksen myös kauden kolmannessa kilpailussa Brasilian GP:ssä. Vaikka jatkossa aika-ajoissa tulikin hyviä sijoituksia, kausi oli suuriin odotuksiin nähden pettymys Salolle. Kauden alun kaksi pistettä jäivät hänen ainoikseen, eikä Toyota jatkanut tiimiä kritisoineen Salon sopimusta, mikä johti hänen F1-uransa päättymiseen.</p></div>\
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/MikaSalo/salo.jpg" class="profiilikuva"/><h3>Mika Juhani Salo (s. 30. marraskuuta 1966 Helsinki)</h3><h4>F1-uran ensimmäiset vuodet</h4><p id="etusivuTeksti">Loppukaudesta 1994 Salon haave täyttyi, kun hän pääsi ajamaan Formula 1:ssä Lotus-tallin autolla. Lotus oli aiemmin ajautunut vakaviin rahoitusongelmiin sekä selvitystilaan, ja muun muassa henkilöstön palkkoja oli maksamatta. Salo onnistui keräämään tukijoiltaan kokoon useita miljoonia jenejä. Salo sijoittui ensimmäisessä kilpailussaan Japanin GP:ssä kymmenenneksi ja kauden viimeisessä kilpailussa Australiassa hän keskeytti. Nämä olivat samalla Lotuksen viimeiset osakilpailut. Kausina 1995–1997 Salo kilpaili Tyrrell-tallin heikolla kalustolla ja sai kerättyä yhteensä 12 pistettä. Kausi 1996 oli Tyrrell-kausista Salon paras. Kauden 1998 Salo ajoi Arrows-tallissa, jossa hän parhaimmillaan taisteli palkintokorokesijoituksesta Monacon GP:ssä Eddie Irvinen kanssa, mutta sijoittui lopulta neljänneksi, joka oli siihen astisista kilpailuista Salon paras.</p><h4>Tuuraajana BAR:lla ja Ferrarilla</h4><p id="etusivuTeksti">Kaudelle 1999 Salo jäi ilman tallipaikkaa Arrowsin purettua yllättäen hänen sopimuksensa. Salo pääsi kuitenkin ajamaan San Marinon, Espanjan sekä Monacon kilpailuissa tulokastalli BAR:n kalustolla, kun Ricardo Zonta oli loukkaantuneena. Espanjassa hän sai kunnian olla ensimmäinen kuljettaja, joka toi BAR-tallin auton maaliin saakka (8. sija). Kolmen kisan pestin jälkeen Salo jäi jälleen ilman F1-töitä, kunnes kauden kahdeksannen kilpailun jälkeen Ferrari palkkasi hänet loukkaantuneen Michael Schumacherin tuuraajaksi. Schumacher oli loukkaantunut Britannian GP:ssä, ja Ferrari päätti palkata tuuraajaksi BAR-tallissa hyvää työtä tehneen Salon. Tämä oli ensimmäinen kerta, kun Salo pääsi ajamaan huippukalustolla Formula 1 -sarjassa. Hänen tehtävänään oli toimia mestaruudesta taistelleen Eddie Irvinen tukena. Salo ajoi Ferrarilla yhteensä kuusi osakilpailua, kohokohtanaan Saksan GP, jossa hän sijoittui toiseksi. Hän oli sijoittunut aika-ajoissa neljänneksi ja nousi lähdössä toiseksi Mika Häkkisen perään. Ajettuaan Häkkistä nopeampia kierrosaikoja, eron kavennuttua ja lopulta Häkkisen keskeytettyä Salo johti kilpailua, mutta joutui päästämään tallimääräyksellä toisena ajaneen Eddie Irvinen edelleen. Kilpailun jälkeen Irvine kuitenkin luovutti kiitollisuudesta ykköspalkintonsa voittotaistelun suosiolla luovuttaneelle Salolle. Salo nousi palkintokorokkeelle vielä Italian GP:ssä, jossa hän sijoittui kolmanneksi. Muissa kilpailuissa hän jäi ilman pisteitä ja saavutetut palkintosijat jäivät Salon F1-uran ainoiksi.</p><h4>Viimeiset vuodet F1:ssä</h4><p id="etusivuTeksti">Kaudelle 2000 Salo siirtyi Sauber-talliin. Hän sijoittui parhaimmillaan Monacon- ja Saksan GP:eissä viidenneksi lisäksi Salo oli kahdesti kuudes, keräsi yhteensä kuusi MM-pistettä ja peittosi näin pisteittä jääneen tallikaverinsa Pedro Dinizin. Vuodeksi 2001 Salo päätti ottaa vastaan haasteen ja siirtyi testaamaan uuden, lähes tyhjältä pohjalta aloittaneen Toyotan F1-tallin autoa. Vuoden testaamisen jälkeen Toyota aloitti kilpailemaan kaudella 2002. Salo nappasi uudelle tallille heti ensimmäisessä kilpailussa Australiassa yhden pisteen sijoittumalla kuudenneksi, ja hän toisti tämän sijoituksen myös kauden kolmannessa kilpailussa Brasilian GP:ssä. Vaikka jatkossa aika-ajoissa tulikin hyviä sijoituksia, kausi oli suuriin odotuksiin nähden pettymys Salolle. Kauden alun kaksi pistettä jäivät hänen ainoikseen, eikä Toyota jatkanut tiimiä kritisoineen Salon sopimusta, mikä johti hänen F1-uransa päättymiseen.</p></div>\
+      	</div>\
+      </div>';
+      var saloHTMLen =
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/MikaSalo/salo.jpg" class="profiilikuva"/><h3>Mika Juhani Salo (Born 30. November 1966 Helsinki)</h3><p id="etusivuTeksti">At the end of the 1994 season, Salos dream came true when he got to drive a Lotus team car in Formula 1. Lotus had previously run into serious financial problems and had gone into liquidation, with, among other things, unpaid staff salaries. Salo managed to raise several million yen from his supporters. Salo finished tenth in his first race at the Japanese GP and retired in the final race of the season in Australia. These were also the last races for Lotus.In the 1995-1997 season, Salo raced with a weak Tyrrell team and scored a total of 12 points. The 1996 season was Salos best of the Tyrrell seasons. In 1998 Salo raced for Arrows, where his best finish was a podium battle with Eddie Irvine in the Monaco GP, but he finished fourth, Salos best finish of the season.For the 1999 season, Salo was left without a seat in the team after Arrows abruptly terminated his contract. However, Salo was able to race in San Marino, Spain and Monaco with the entry-level BAR team while Ricardo Zonta was injured. In Spain he had the honour of being the first driver to take a BAR car to the finish line (8th place).After three races, Salo again missed F1 work until the eighth race of the season, when Ferrari hired him as a replacement for the injured Michael Schumacher. Schumacher had been injured at the British GP and Ferrari decided to hire Salo, who had done a good job at BAR, as his replacement. This was the first time that Salo had been able to drive a top car in Formula 1. His role was to support Eddie Irvine, who was fighting for the championship.Salo drove a total of six races for Ferrari, the highlight being the German GP, where he finished second. He had finished fourth in qualifying and came second behind Mika Häkkinen at the start. After setting faster lap times than Häkkinen, narrowing the gap and eventually being stopped by Häkkinen, Salo led the race, but was forced to let Eddie Irvine, who was second on the grid, pass. After the race, however, Irvine thankfully handed over his first prize to Salo, who had handed over the win to the winner of the battle. Salo made it to the podium in the Italian GP, where he finished third. In the other races he failed to score any points and the podium finishes were the only ones of his F1 career.For the 2000 season, Salo moved to the Sauber team. In addition to his best finishes of fifth in the Monaco and German GPs, Salo finished sixth twice, scoring a total of six World Championship points, surpassing his team-mate Pedro Diniz, who had not scored any.By 2001, Salo decided to take up the challenge and moved on to test a new car for the Toyota F1 team, which had started from almost nothing. After a year of testing, Toyota started to compete in the 2002 season. Salo scored one point for the new team in the very first race in Australia, finishing sixth, and he repeated this result in the third race of the season, the Brazilian GP. Despite further good qualifying results, the season was a disappointment for Salo against high expectations. His only two points at the start of the season were his only two, and Toyota did not extend his contract, which led to the end of his F1 career.</p></div>\
       	</div>\
       </div>';
       var kimiHTML =
-        '<div class="col-sm-10 p-3 bg-light">\
-      	<div>\<img src="kirjasto/KimiRaikkonen/kimi.jfif" class="profiilikuva1"/><h3>Kimi-Matias Räikkönen (s. 17. lokakuuta 1979 Espoo) </h3><h4>Uran alku Sauberilla (2001)</h4><p id="etusivuTeksti">Sauber-talli aikoi palkata ilman ajopaikkaa jääneen Williamsin Jenson Buttonin kisakuljettajakseen, mutta Button päätti tehdä sopimuksen Renault’n kanssa. Kilpailuinsinööri Jacky Eeckelaert otti yhteyttä Buttonin asioita ajaneeseen Steve Robertsoniin ja kysyi, onko heillä jotain toista lupaavaa kuljettajaa. Robertson alkoi markkinoida Räikköstä. Eeckelaert alkoi kysellä karting-piireistä kommentteja Räikkösestä ja sai kuulla hänen olevan muun muassa erittäin päättäväinen.Räikkönen sai mahdollisuuden todistaa taitonsa Sauber-tallille, kun hänen managerinsa Steve Robertson markkinoi suojattiaan tallipäällikkö Peter Sauberille erityislaatuisena kykynä. Syyskuussa 2000 Mugellossa järjestetyissä kolmipäiväisissä testeissä Räikkönen onnistui vakuuttamaan tallin kyvyistään, vaikka tallipäällikkö Sauber seurasikin testejä vain yhden päivän ajan...</p><h4>McLaren (2002–2006)</h4><p id="etusivuTeksti">Seuraavaksi kaudeksi Räikköselle tarjottiin kuljettajan paikkaa monesta tallista. Oletettavasti Räikkönen kävi neuvotteluja muun muassa Ferrari-tallin kanssa, mutta sopimusta ei syntynyt. Kauden 2001 päätteeksi kaikkien aikojen toiseksi parhaiten menestynyt F1-talli McLaren osti Räikkösen sopimuksen korvatakseen uransa päättäneen Mika Häkkisen. McLarenilla ollessaan Räikkönen nousi sarjan huippukuljettajien joukkoon, mutta vaikeuksia tuottivat jatkuvat tekniset ongelmat. Noin 38 prosenttia Räikkösen McLarenille ajamista kilpailuista päättyi keskeytykseen. Kauden 2002 aluksi Räikkönen sijoittui ensimmäistä kertaa palkintokorokkeelle ollessaan Australian GP:n kolmas ja sijoittui aika-ajoissa 10 kertaa kauden 17 kilpailusta tallikaverinsa David Coulthardin edelle, mutta muuten kausi oli Räikköselle vaikea. Räikkönen joutui keskeyttämään peräti 10 kauden 17 kilpailusta...</p><h4>Ferrari (2007–2009)</h4><p id="etusivuTeksti">10. syyskuuta 2006 Monzan radalla ajetun Italian GP:n jälkeen Ferrarin tiedottaja ilmoitti, että Michael Schumacher päättäisi F1-uransa kuluvan kauden jälkeen ja että tallin kuljettajat kaudella 2007 olisivat Kimi Räikkönen ja Felipe Massa. Räikkönen ajoi tallissa kolme kautta ja saavutti jokaisella kaudellaan vähintään yhden osakilpailuvoiton. Kun Räikkösen Ferrari-sopimus lopulta julkaistiin, 13 kansainvälistä vedonlyöntitoimistoa piti häntä todennäköisimpänä maailmanmestarina, keskimääräisenä kertoimena 2,3. Talvitesteissä Räikkösen uusi tallikaveri Felipe Massa oli kuitenkin säännöllisesti häntä nopeampi. Kauden ensimmäisessä kilpailussa Australiassa Räikkönen ajoi voittoon saavutettuaan sekä paalupaikan, nopeimman kierroksen että voiton ensimmäistä kertaa urallaan samassa kilpailussa. Ferrarin epäselvä pohjaratkaisu kuitenkin kiellettiin kilpailun jälkeen, jolloin tallin tekninen etumatka McLareniin pieneni huomattavasti.lähde? Kolmen kisan jälkeen Räikkönen jakoi vielä MM-sarjan kärkipaikan Fernando Alonson ja Lewis Hamiltonin kanssa, mutta Espanjan GP:ssä keskeytykseen johtanut sähkövika pudotti Räikkösen MM-sarjan neljänneksi. Myöskään Ferrarin julkisuuteen ilmoittamat vastoinkäymiset tuulitunnelin kanssa alkukesästä eivät auttaneet asiaa. Kun myös seuraavat kolme kisaa olivat pettymyksiä, Räikkönen putosi pistejohtoon nousseesta Hamiltonista 26 pisteen päähän. Räikkönen nousi takaisin MM-taisteluun voittamalla Ranskan ja Britannian GP:t...</p><h4>Lotus (2012–2013)</h4><p id="etusivuTeksti">Kauden avanneen Australian GP:n aika-ajoissa Räikkönen epäonnistui aikakierroksella sattuneen ajovirheen takia jääden sijalle 18. Hän nousi kuitenkin yhden sijan Sergio Pérezin saaman lähtöruuturangaistuksen ansiosta.[104] Räikkösen tallikaveri Romain Grosjean ajoi kolmanteen lähtöruutuun. Hän sai myös hyvän lähdön nousten kolme sijaa.[105] Kilpailussa Räikkönen ajoi seitsemänneksi nousten viimeisellä kierroksella kolme sijaa.[106] Kauden toisessa osakilpailussa Malesiassa Räikkönen päihitti tallitoverinsa ja ajoi muutamista virheistä huolimatta aika-ajossa viidenneksi osoittaen Lotuksen kilpailukyvyn.[107] Vaihdelaatikon vaihtamisesta seurannut rangaistus pudotti Kimin kuitenkin lähtöruutuun 10. Kilpailussa Räikkönen ylsi niin ikään viidenneksi tehden myös kilpailun nopeimman kierrosajan.[108] Kiinan GP:ssä Räikkönen taisteli jo palkintopallisijasta ajaessaan toisena, kun matkaa maaliin oli vain 7 kierrosta. Vain 15 sekunnissa hän kuitenkin putosi sijalle 14 renkaiden suorituskyvyn loputtua kesken. Kauden neljännessä osakilpailussa Bahrainissa Räikkönen ajoi yhdennestätoista lähtöruudusta toiseksi ja nousi palkintopallille ensimmäistä kertaa paluunsa jälkeen. Hän taisteli voitosta Red Bullin Sebastian Vettelin kanssa muttei pystynyt ohittamaan häntä. Espanjan GP:ssä Räikkönen lähti neljännestä ruudusta. Hän ohitti startissa tallikaverinsa Grosjeanin ja nousi kolmanneksi. Räikkönen piti kolmossijansa maaliin asti. Hän nousi samalla MM-pisteissä neljänneksi...</p><h4>Paluu Ferrarille (2014–2018)</h4><p id="etusivuTeksti">11. syyskuuta 2013 Ferrari julkisti verkkosivuillaan tehneensä kahden vuoden sopimuksen Räikkösen kanssa.[141] Ferrarin tallipäällikkö Stefano Domenicali kertoi olevansa mielissään Räikkösen paluusta talliin,[142] kun taas Ferrarin entinen urheilujohtaja Cesare Fiorio sanoi Räikkösen olleen väärä valinta kuljettajaksi.[143] Kauden ensimmäisissä aika-ajoissa Australian GP:ssä Räikkönen sijoittui vasta 12:nneksi pyörähdettyään ulos radalta toisen aika-ajo-osion lopussa. Kilpailussa Räikkönen sijoittui lopulta kahdeksanneksi.[144] Myöhemmin Räikkösen sijoitus nousi pykälällä, kun toiseksi ajanut Daniel Ricciardo hylättiin liian suuren polttoainevirtauksen takia.[144][145] Malesian GP:ssä Räikkönen oli sekä perjantain että lauantain harjoituksissa kolmen nopeimman joukossa.[146] Sateisissa aika-ajoissa Räikkönen sijoittui kuudenneksi.[146] Kilpailussa Räikkönen putosi joukon hännille Kevin Magnussenin osuttua hänen autonsa takarenkaaseen. Räikkönen sijoittui lopulta kilpailussa pistesijojen ulkopuolelle 12:nneksi.[146][147] Bahrainin GP:ssä Räikkönen ajoi aika-ajoissa viidenteen ruutuun, mutta kilpailussa Ferrarin vauhti ei riittänyt haastamaan Mercedes-moottoreita käyttäviä talleja, ja Räikkönen putosi kilpailussa viimeiselle pistesijalle kymmenenneksi.[148][149] Kiinan GP:ssä Räikkönen epäonnistui sateisissa aika-ajoissa jääden 11:nteen ruutuun.[150] Kilpailussa Räikkönen sijoittui kahdeksanneksi.[151][152]Espanjan GP:ssä Räikkönen sijoittui seitsemänneksi...</p><h4>Alfa Romeo (2019–2021)</h4><p id="etusivuTeksti">Kimi Räikkönen siirtyi Sauber-tallia sponsoroivan Alfa Romeon kilpakuljettajaksi kausille 2019 ja 2020, hänen tilalleen Ferrarille tuli nuori Charles Leclerc. Käytännössä hän siis pysyy saman katon alla, FIAT-yhtymässä, ja vaihtaa vain kaudeksi 2019 Alfa Romeolle Ferrarilla vietettyjen vuosien jälkeen. Sekä Ferrari että Alfa Romeo kuuluvat FIAT-yhtymään. [187][188] Räikkönen oli kauden avanneessa Australian GP:ssä kahdeksas. Bahrainin GP:ssä Räikkönen teki uuden ennätyksen ajamalla 53. kerran peräkkäin kymmenen parhaan joukkoon aika-ajoissa.[189] Kilpailussa Räikkönen sijoittui seitsemänneksi. Kiinan GP:ssä Räikkösen aika-ajojen ennätysputki katkesi hänen jäätyään 13:nteen ruutuun. Kilpailussa Räikkönen onnistui nousemaan pisteille ajaen yhdeksänneksi. Azerbaidžanin GP:ssä Räikkönen hävisi ensimmäistä kertaa tallikaverilleen Antonio Giovinazzille aika-ajoissa Giovinazzin ajettua kahdeksanteen ruutuun ja Räikkösen yhdeksänteen ruutuun. Räikkönen joutui starttaamaan kilpailuun varikolta, kun hänen aika-ajosuorituksensa hylättiin laittoman etusiiven takia[190]. Kilpailussa Räikkönen onnistui nousemaan viimeiselle pistesijalle kymmenenneksi. Espanjan GP:ssä Räikkösen pisteputki katkesi hänen oltuaan kilpailun 14:s. Monacon GP:ssä Räikkönen osallistui uransa 300. F1-kilpailuviikonloppuun, kilpailussa Räikkönen oli 17:s...</p></div>\
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/KimiRaikkonen/kimi.jfif" class="profiilikuva1"/><h3>Kimi-Matias Räikkönen (s. 17. lokakuuta 1979 Espoo) </h3><h4>Uran alku Sauberilla (2001)</h4><p id="etusivuTeksti">Sauber-talli aikoi palkata ilman ajopaikkaa jääneen Williamsin Jenson Buttonin kisakuljettajakseen, mutta Button päätti tehdä sopimuksen Renault’n kanssa. Kilpailuinsinööri Jacky Eeckelaert otti yhteyttä Buttonin asioita ajaneeseen Steve Robertsoniin ja kysyi, onko heillä jotain toista lupaavaa kuljettajaa. Robertson alkoi markkinoida Räikköstä. Eeckelaert alkoi kysellä karting-piireistä kommentteja Räikkösestä ja sai kuulla hänen olevan muun muassa erittäin päättäväinen.Räikkönen sai mahdollisuuden todistaa taitonsa Sauber-tallille, kun hänen managerinsa Steve Robertson markkinoi suojattiaan tallipäällikkö Peter Sauberille erityislaatuisena kykynä. Syyskuussa 2000 Mugellossa järjestetyissä kolmipäiväisissä testeissä Räikkönen onnistui vakuuttamaan tallin kyvyistään, vaikka tallipäällikkö Sauber seurasikin testejä vain yhden päivän ajan...</p><h4>McLaren (2002–2006)</h4><p id="etusivuTeksti">Seuraavaksi kaudeksi Räikköselle tarjottiin kuljettajan paikkaa monesta tallista. Oletettavasti Räikkönen kävi neuvotteluja muun muassa Ferrari-tallin kanssa, mutta sopimusta ei syntynyt. Kauden 2001 päätteeksi kaikkien aikojen toiseksi parhaiten menestynyt F1-talli McLaren osti Räikkösen sopimuksen korvatakseen uransa päättäneen Mika Häkkisen. McLarenilla ollessaan Räikkönen nousi sarjan huippukuljettajien joukkoon, mutta vaikeuksia tuottivat jatkuvat tekniset ongelmat. Noin 38 prosenttia Räikkösen McLarenille ajamista kilpailuista päättyi keskeytykseen. Kauden 2002 aluksi Räikkönen sijoittui ensimmäistä kertaa palkintokorokkeelle ollessaan Australian GP:n kolmas ja sijoittui aika-ajoissa 10 kertaa kauden 17 kilpailusta tallikaverinsa David Coulthardin edelle, mutta muuten kausi oli Räikköselle vaikea. Räikkönen joutui keskeyttämään peräti 10 kauden 17 kilpailusta...</p><h4>Ferrari (2007–2009)</h4><p id="etusivuTeksti">10. syyskuuta 2006 Monzan radalla ajetun Italian GP:n jälkeen Ferrarin tiedottaja ilmoitti, että Michael Schumacher päättäisi F1-uransa kuluvan kauden jälkeen ja että tallin kuljettajat kaudella 2007 olisivat Kimi Räikkönen ja Felipe Massa. Räikkönen ajoi tallissa kolme kautta ja saavutti jokaisella kaudellaan vähintään yhden osakilpailuvoiton. Kun Räikkösen Ferrari-sopimus lopulta julkaistiin, 13 kansainvälistä vedonlyöntitoimistoa piti häntä todennäköisimpänä maailmanmestarina, keskimääräisenä kertoimena 2,3. Talvitesteissä Räikkösen uusi tallikaveri Felipe Massa oli kuitenkin säännöllisesti häntä nopeampi. Kauden ensimmäisessä kilpailussa Australiassa Räikkönen ajoi voittoon saavutettuaan sekä paalupaikan, nopeimman kierroksen että voiton ensimmäistä kertaa urallaan samassa kilpailussa. Ferrarin epäselvä pohjaratkaisu kuitenkin kiellettiin kilpailun jälkeen, jolloin tallin tekninen etumatka McLareniin pieneni huomattavasti.lähde? Kolmen kisan jälkeen Räikkönen jakoi vielä MM-sarjan kärkipaikan Fernando Alonson ja Lewis Hamiltonin kanssa, mutta Espanjan GP:ssä keskeytykseen johtanut sähkövika pudotti Räikkösen MM-sarjan neljänneksi. Myöskään Ferrarin julkisuuteen ilmoittamat vastoinkäymiset tuulitunnelin kanssa alkukesästä eivät auttaneet asiaa. Kun myös seuraavat kolme kisaa olivat pettymyksiä, Räikkönen putosi pistejohtoon nousseesta Hamiltonista 26 pisteen päähän. Räikkönen nousi takaisin MM-taisteluun voittamalla Ranskan ja Britannian GP:t...</p><h4>Lotus (2012–2013)</h4><p id="etusivuTeksti">Kauden avanneen Australian GP:n aika-ajoissa Räikkönen epäonnistui aikakierroksella sattuneen ajovirheen takia jääden sijalle 18. Hän nousi kuitenkin yhden sijan Sergio Pérezin saaman lähtöruuturangaistuksen ansiosta.[104] Räikkösen tallikaveri Romain Grosjean ajoi kolmanteen lähtöruutuun. Hän sai myös hyvän lähdön nousten kolme sijaa.[105] Kilpailussa Räikkönen ajoi seitsemänneksi nousten viimeisellä kierroksella kolme sijaa.[106] Kauden toisessa osakilpailussa Malesiassa Räikkönen päihitti tallitoverinsa ja ajoi muutamista virheistä huolimatta aika-ajossa viidenneksi osoittaen Lotuksen kilpailukyvyn.[107] Vaihdelaatikon vaihtamisesta seurannut rangaistus pudotti Kimin kuitenkin lähtöruutuun 10. Kilpailussa Räikkönen ylsi niin ikään viidenneksi tehden myös kilpailun nopeimman kierrosajan.[108] Kiinan GP:ssä Räikkönen taisteli jo palkintopallisijasta ajaessaan toisena, kun matkaa maaliin oli vain 7 kierrosta. Vain 15 sekunnissa hän kuitenkin putosi sijalle 14 renkaiden suorituskyvyn loputtua kesken. Kauden neljännessä osakilpailussa Bahrainissa Räikkönen ajoi yhdennestätoista lähtöruudusta toiseksi ja nousi palkintopallille ensimmäistä kertaa paluunsa jälkeen. Hän taisteli voitosta Red Bullin Sebastian Vettelin kanssa muttei pystynyt ohittamaan häntä. Espanjan GP:ssä Räikkönen lähti neljännestä ruudusta. Hän ohitti startissa tallikaverinsa Grosjeanin ja nousi kolmanneksi. Räikkönen piti kolmossijansa maaliin asti. Hän nousi samalla MM-pisteissä neljänneksi...</p><h4>Paluu Ferrarille (2014–2018)</h4><p id="etusivuTeksti">11. syyskuuta 2013 Ferrari julkisti verkkosivuillaan tehneensä kahden vuoden sopimuksen Räikkösen kanssa.[141] Ferrarin tallipäällikkö Stefano Domenicali kertoi olevansa mielissään Räikkösen paluusta talliin,[142] kun taas Ferrarin entinen urheilujohtaja Cesare Fiorio sanoi Räikkösen olleen väärä valinta kuljettajaksi.[143] Kauden ensimmäisissä aika-ajoissa Australian GP:ssä Räikkönen sijoittui vasta 12:nneksi pyörähdettyään ulos radalta toisen aika-ajo-osion lopussa. Kilpailussa Räikkönen sijoittui lopulta kahdeksanneksi.[144] Myöhemmin Räikkösen sijoitus nousi pykälällä, kun toiseksi ajanut Daniel Ricciardo hylättiin liian suuren polttoainevirtauksen takia.[144][145] Malesian GP:ssä Räikkönen oli sekä perjantain että lauantain harjoituksissa kolmen nopeimman joukossa.[146] Sateisissa aika-ajoissa Räikkönen sijoittui kuudenneksi.[146] Kilpailussa Räikkönen putosi joukon hännille Kevin Magnussenin osuttua hänen autonsa takarenkaaseen. Räikkönen sijoittui lopulta kilpailussa pistesijojen ulkopuolelle 12:nneksi.[146][147] Bahrainin GP:ssä Räikkönen ajoi aika-ajoissa viidenteen ruutuun, mutta kilpailussa Ferrarin vauhti ei riittänyt haastamaan Mercedes-moottoreita käyttäviä talleja, ja Räikkönen putosi kilpailussa viimeiselle pistesijalle kymmenenneksi.[148][149] Kiinan GP:ssä Räikkönen epäonnistui sateisissa aika-ajoissa jääden 11:nteen ruutuun.[150] Kilpailussa Räikkönen sijoittui kahdeksanneksi.[151][152]Espanjan GP:ssä Räikkönen sijoittui seitsemänneksi...</p><h4>Alfa Romeo (2019–2021)</h4><p id="etusivuTeksti">Kimi Räikkönen siirtyi Sauber-tallia sponsoroivan Alfa Romeon kilpakuljettajaksi kausille 2019 ja 2020, hänen tilalleen Ferrarille tuli nuori Charles Leclerc. Käytännössä hän siis pysyy saman katon alla, FIAT-yhtymässä, ja vaihtaa vain kaudeksi 2019 Alfa Romeolle Ferrarilla vietettyjen vuosien jälkeen. Sekä Ferrari että Alfa Romeo kuuluvat FIAT-yhtymään. [187][188] Räikkönen oli kauden avanneessa Australian GP:ssä kahdeksas. Bahrainin GP:ssä Räikkönen teki uuden ennätyksen ajamalla 53. kerran peräkkäin kymmenen parhaan joukkoon aika-ajoissa.[189] Kilpailussa Räikkönen sijoittui seitsemänneksi. Kiinan GP:ssä Räikkösen aika-ajojen ennätysputki katkesi hänen jäätyään 13:nteen ruutuun. Kilpailussa Räikkönen onnistui nousemaan pisteille ajaen yhdeksänneksi. Azerbaidžanin GP:ssä Räikkönen hävisi ensimmäistä kertaa tallikaverilleen Antonio Giovinazzille aika-ajoissa Giovinazzin ajettua kahdeksanteen ruutuun ja Räikkösen yhdeksänteen ruutuun. Räikkönen joutui starttaamaan kilpailuun varikolta, kun hänen aika-ajosuorituksensa hylättiin laittoman etusiiven takia[190]. Kilpailussa Räikkönen onnistui nousemaan viimeiselle pistesijalle kymmenenneksi. Espanjan GP:ssä Räikkösen pisteputki katkesi hänen oltuaan kilpailun 14:s. Monacon GP:ssä Räikkönen osallistui uransa 300. F1-kilpailuviikonloppuun, kilpailussa Räikkönen oli 17:s...</p></div>\
+      	</div>\
+      </div>';
+      var kimiHTMLen =
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/KimiRaikkonen/kimi.jfif" class="profiilikuva1"/><h3>Kimi-Matias Räikkönen (Born 17. October 1979 Espoo) </h3><p id="etusivuTeksti">The Sauber team was going to hire Jenson Button, who had been left without a race seat by Williams, as its driver, but Button decided to sign a contract with Renault. Jacky Eeckelaert, the race engineer, contacted Steve Robertson, who was driving for Button, to see if they had another promising driver. Robertson started marketing Räikkönen. Eeckelaert started asking karting circles for comments about Räikkönen and was told that he was, among other things, very determined.Räikkönen was given the opportunity to prove his worth to the Sauber team when his manager Steve Robertson marketed his protégé to team principal Peter Sauber as a special talent. At the three-day test at Mugello in September 2000, Räikkönen managed to convince the team of his abilities, even though Sauber, the team manager, only observed the test for one day. Räikkönen ran two more tests for Sauber before his contract was announced.[24] Räikkönens progress was rapid, as he was able to improve his times by three seconds on his second day of testing. Michael Schumacher, who drove in the same tests, told Eeckelaert that Räikkönens driving style showed that he had the potential to be very fast.Before the 2001 season, it was uncertain whether Räikkönen would be granted a super-licence, a licence to drive in F1 races, issued by the FIA. This is usually conditional on experience in certain smaller formula classes, but the Renault series in which Räikkönen drives is such a small class that experience was not considered sufficient.In the end, team principal Sauber considered it a miracle that Räikkönen was granted a licence. The only person to vote against Räikkönens licence was Flavio Briatore, who voted for both Benetton and Minardi. Max Mosley, the FIA director, abstained. Many doubted Räikkönens skills at the wheel of an F1 car and, given his limited experience, he was even considered a safety risk on the track.Räikkönen allayed those doubts from the start by driving safely throughout the season. In his opening race at the Australian GP, he finished seventh, but a 25-second time penalty for the driver ahead of him, Olivier Panis, lifted Räikkönen to sixth place and within one point. Räikkönen scored a total of nine World Championship points during the season, finishing fourth in Austria and Canada and fifth in Britain. He finished tenth in the final points standings. Räikkönen was also named 2001 Newcomer of the Year.For the following season, Räikkönen was offered a drivers seat by several teams. Supposedly, Räikkönen negotiated with Ferrari, among others, but no deal was reached. At the end of the 2001 season, McLaren, the second most successful F1 team of all time, bought Räikkönens contract to replace Mika Häkkinen, who had ended his career.During his time at McLaren, Räikkönen rose to the top of the class, but continued technical problems caused problems. Around 38% of the races Räikkönen drove for McLaren ended in retirement.The 2002 season began with Räikkönen finishing on the podium for the first time after finishing third in the Australian GP and qualifying ahead of team-mate David Coulthard 10 times out of 17 races, but otherwise it was a difficult season for Räikkönen. Räikkönen was forced to retire from no less than 10 of the 17 races he has contested this season. Eight of those were due to technical faults, one to a crash and one to his own driving error. His best finish, second place, came in the French GP. The win was also close, as Räikkönen was leading the race with a few laps to go but suffered an oil leak and a long corner. Michael Schumacher passed him to win the race and secure his fifth world title. For the season as a whole, Räikkönen managed four podium finishes and finished sixth in the World Championship points.</p></div>\
       	</div>\
       </div>';
       var heikkiHTML =
-        '<div class="col-sm-10 p-3 bg-light">\
-      	<div>\<img src="kirjasto/HeikkiKovalainen/heikki.jpg" class="profiilikuva"/><h3>Heikki Johannes Kovalainen (s. 19. lokakuuta 1981 Suomussalmi)</h3><h4>Renault</h4><p id="etusivuTeksti">Kaudella 2006 Kovalainen toimi Renaultn Formula 1 -tallin testikuljettajana ja ajoi 28 000 testikilometriä, ajaen eniten testikilometrejä kaikki F1-kuljettajat mukaan lukien. Kova työ palkittiin kilpakuljettajan paikalla seuraavaksi vuodeksi. Kaudella 2007 Kovalainen nostettiin Renaultn kilpakuljettajaksi, tallikaverinaan Giancarlo Fisichella. Asiasta tiedotettiin 6. syyskuuta 2006...</p><h4>McLaren</h4><p id="etusivuTeksti">Kaudeksi 2008 Kovalainen siirtyi McLarenille, aiemman kauden toiseen huipputalliin. Hänestä tuli sopimuksen varmistumisen myötä neljäs suomalainen McLarenin ratissa, seuraten Keke Rosbergia, Mika Häkkistä ja Kimi Räikköstä. Kovalainen aloitti McLarenin testaamisen tammikuussa Jerezin radalla...</p><h4>Lotus ja Caterham</h4><p id="etusivuTeksti">Pitkään kestäneen epävarmuuden jälkeen joulukuun 2009 alussa Kovalaisen ilmoitettiin tehneen sopimus Lotus Racing:n kanssa kaudeksi 2010. Kovalaisen tallikaverina ajoi Jarno Trulli. Tallin tavoitteet kaudelle eivät olleet korkeat, sillä Lotus oli käytännössä tulokastalli, joka käytti Cosworthin moottoreita. Lotus oli kauden alussa kärkitalleja vähintään 4 sekuntia hitaampi. Jälkeenpäin Kovalainen on kertonut, että hänellä olisi ollut kaudelle lähes valmis kuljettajasopimus Toyotan F1-tallin kanssa. Toyota kuitenkin vetäytyi koko lajista taloudellisten syiden vuoksi. Kauden kahdessa ensimmäisessä kilpailussa Kovalainen onnistui lyömään tallikaverinsa Jarno Trullin ja ylsi Australiassa kolmanneksitoista...</p></div>\
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/HeikkiKovalainen/heikki.jpg" class="profiilikuva"/><h3>Heikki Johannes Kovalainen (s. 19. lokakuuta 1981 Suomussalmi)</h3><h4>Renault</h4><p id="etusivuTeksti">Kaudella 2006 Kovalainen toimi Renaultn Formula 1 -tallin testikuljettajana ja ajoi 28 000 testikilometriä, ajaen eniten testikilometrejä kaikki F1-kuljettajat mukaan lukien. Kova työ palkittiin kilpakuljettajan paikalla seuraavaksi vuodeksi. Kaudella 2007 Kovalainen nostettiin Renaultn kilpakuljettajaksi, tallikaverinaan Giancarlo Fisichella. Asiasta tiedotettiin 6. syyskuuta 2006...</p><h4>McLaren</h4><p id="etusivuTeksti">Kaudeksi 2008 Kovalainen siirtyi McLarenille, aiemman kauden toiseen huipputalliin. Hänestä tuli sopimuksen varmistumisen myötä neljäs suomalainen McLarenin ratissa, seuraten Keke Rosbergia, Mika Häkkistä ja Kimi Räikköstä. Kovalainen aloitti McLarenin testaamisen tammikuussa Jerezin radalla...</p><h4>Lotus ja Caterham</h4><p id="etusivuTeksti">Pitkään kestäneen epävarmuuden jälkeen joulukuun 2009 alussa Kovalaisen ilmoitettiin tehneen sopimus Lotus Racing:n kanssa kaudeksi 2010. Kovalaisen tallikaverina ajoi Jarno Trulli. Tallin tavoitteet kaudelle eivät olleet korkeat, sillä Lotus oli käytännössä tulokastalli, joka käytti Cosworthin moottoreita. Lotus oli kauden alussa kärkitalleja vähintään 4 sekuntia hitaampi. Jälkeenpäin Kovalainen on kertonut, että hänellä olisi ollut kaudelle lähes valmis kuljettajasopimus Toyotan F1-tallin kanssa. Toyota kuitenkin vetäytyi koko lajista taloudellisten syiden vuoksi. Kauden kahdessa ensimmäisessä kilpailussa Kovalainen onnistui lyömään tallikaverinsa Jarno Trullin ja ylsi Australiassa kolmanneksitoista...</p></div>\
+      	</div>\
+      </div>';
+      var heikkiHTMLen =
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/HeikkiKovalainen/heikki.jpg" class="profiilikuva"/><h3>Heikki Johannes Kovalainen (Born 19. October 1981 Suomussalmi)</h3><p id="etusivuTeksti">In 2006 Kovalainen was a test driver for Renaults Formula 1 team and drove 28,000 test kilometres, the most test kilometres of any F1 driver. His hard work was rewarded with a racing drivers seat for the following year.In 2007, Kovalainen was promoted to Renaults racing driver, with Giancarlo Fisichella as his team-mate. The announcement was made on 6 September 2006.Kovalainens place at Renault opened up when reigning world champion Fernando Alonso joined McLaren for the 2007 season. Kovalainens manager Flavio Briatore was Renaults team principal. Renault had won both the drivers and manufacturers world titles the previous season, so expectations were high from both inside and outside the team.In qualifying for his debut race in Australia, Kovalainen finished 13th, with team-mate Fisichella on the sixth grid position. Kovalainen came close to scoring points in the race, but a spin and a wide corner left him in tenth place. Team boss Briatore scolded his newcomer, as in the same race, points leader Lewis Hamilton finished third for McLaren and Briatore, used to winning, had the same expectations.The points race opened up in the very next race, the Malaysian GP. With all the races at the start of the season finishing below expectations, Briatore was forced to admit that the fault was not with the drivers but with the car?In the sixth eventful race of the season, in Canada, Kovalainen managed to finish fourth from the last grid position (22nd), aided by numerous safety car episodes. In the US GP, Kovalainen started the race from his career-best grid position of sixth. The race also went well: he led the first pit stops of the F1 race for the first time in his career and finished fifth. During the US races, there was a rumour that Kovalainen would move to Williams in the middle of the season. However, all parties denied the transfer rumours. In the following races, Kovalainen was steadily gaining points. He went on a seven-race points streak.At the end of the season, in the rainy Japanese GP, Kovalainen finished on the podium for the first time in his F1 career after finishing second. In the same race, Kimi Räikkönen was third in his Ferrari and the two Finnish drivers battled for second place as Kimi Räikkönen tried to overtake Kovalainen but failed. Kovalainens second place was also Renaults only podium finish of the season. Despite a difficult start to the season, Kovalainens excellent late-season performance saw him beat his experienced team-mate Fisichella in the World Championship.In the season-ending Brazilian GP, Ralf Schumacher hit Kovalainen at the start and Kovalainen was forced to pit for a slow lap afterwards due to a puncture. On lap 37, the rear suspension of the car broke, presumably due to the crash, and Kovalainen derailed off the track. This was the first retirement of his F1 career and he finished seventh in the final standings of the World Championship. In doing so, Kovalainen equalled the record for newcomers, along with Tiago Monteiro, after finishing the first 17 races.Kovalainen eventually finished seventh in the World Championship. Somewhat surprisingly, Renault was not willing to extend Kovalainens contract? and for the 2008 season Kovalainen moved to drive the McLaren teams second race car with Lewis Hamilton. The transfer was confirmed on 14 December 2007...</p></div>\
       	</div>\
       </div>';
       var bottasHTML =
-        '<div class="col-sm-10 p-3 bg-light">\
-      	<div>\<img src="kirjasto/ValtteriBottas/valtteri.jpg" class="profiilikuva1"/><h3>Valtteri Viktor Bottas (s. 28. elokuuta 1989 Nastola)</h3><h4>Williams</h4><p id="etusivuTeksti">Bottaksen ura Formula ykkösissä alkoi kauden avauskilpailulla Australian Melbournessa. Bottas päihitti heti tallikaverinsa Maldonadon aika-ajon ensimmäisessä osiossa. Bottas ajoi 16. lähtöruutuun ja oli tulokkaista paras aika-ajoissa. Uransa ensimmäisessä F1-kilpailussaan Bottas ajoi maaliin sijalla 14. Malesiassa Bottas karsiutui jo aika-ajon ykkösosiolla ja jäi 18. lähtöruutuun. Kilpailussa hän sijoittui 11:ksi jääden niukasti pistesijojen ulkopuolelle. Kiinan GP:ssä Bottas lähti matkaan 16:sta lähtöruudusta ja ajoi maaliin 13:ksi päihittäen tallikaverinsa Pastor Maldonadon kilpailussa. Bahrainin GP:ssä Bottas oli maalissa 14:s ja Espanjan GP:ssä 16:s. Monacon GP oli Bottaksen ensimmäinen kerta tällä radalla. Kilpailussa Bottas lähti ruudusta 14 ja oli kilpailussa parhammillaan 11:s ja lähellä uran ensimmäistä MM-pistettä. Lopulta Bottas ajoi maaliin 12:na...</p><h4>Mercedes</h4><p id="etusivuTeksti">Bottas ajoi avausosakilpailussa Australiassa kolmanneksi. Kiinan GP:ssä Bottas pyörähti turva-auton takana, ja menetti mahdollisuutensa taistella palkintopallisijoista. Maalissa Bottas oli kuudes. Bahrainissa Bottas ajoi urallaan ensimmäistä kertaa paalupaikalle, mutta itse kilpailussa putosi kolmanneksi rengaspaineongelmien vuoksi. Venäjän GP:ssä Bottas pääsi heti lähdössä kolmosruudusta kärkeen ja voitti uransa ensimmäisen F1-osakilpailun, toisen suomalaisen Kimi Räikkösen ollessa kolmas. Espanjassa Bottas osui ensimmäisessä mutkassa Räikkösen kanssa, ja joutui myöhemmin keskeyttämään kilpailun moottoririkkoon. Kanadan GP:ssä Bottas oli toinen. Bottas ajoi toiseksi myös Azerbaidžanissa, huolimatta kolareista ensimmäisessä mutkassa Vettelin kanssa ja toisessa mutkassa Räikkösen kanssa, jonka seurauksena Bottas kärsi rengasrikon sekä etusiipivaurion ja hän putosi viimeiseksi kierroksen jälkeen kärjestä. Lukuisten tapahtumien siivittämässä kilpailussa Bottas nousi viimeisillä metreillä ohi Lance Strollin toiseksi. Itävallassa Bottas ajoi paalulta erinomaisen lähdön avittamana voittoon...</p></div>\
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/ValtteriBottas/valtteri.jpg" class="profiilikuva1"/><h3>Valtteri Viktor Bottas (s. 28. elokuuta 1989 Nastola)</h3><h4>Williams</h4><p id="etusivuTeksti">Bottaksen ura Formula ykkösissä alkoi kauden avauskilpailulla Australian Melbournessa. Bottas päihitti heti tallikaverinsa Maldonadon aika-ajon ensimmäisessä osiossa. Bottas ajoi 16. lähtöruutuun ja oli tulokkaista paras aika-ajoissa. Uransa ensimmäisessä F1-kilpailussaan Bottas ajoi maaliin sijalla 14. Malesiassa Bottas karsiutui jo aika-ajon ykkösosiolla ja jäi 18. lähtöruutuun. Kilpailussa hän sijoittui 11:ksi jääden niukasti pistesijojen ulkopuolelle. Kiinan GP:ssä Bottas lähti matkaan 16:sta lähtöruudusta ja ajoi maaliin 13:ksi päihittäen tallikaverinsa Pastor Maldonadon kilpailussa. Bahrainin GP:ssä Bottas oli maalissa 14:s ja Espanjan GP:ssä 16:s. Monacon GP oli Bottaksen ensimmäinen kerta tällä radalla. Kilpailussa Bottas lähti ruudusta 14 ja oli kilpailussa parhammillaan 11:s ja lähellä uran ensimmäistä MM-pistettä. Lopulta Bottas ajoi maaliin 12:na...</p><h4>Mercedes</h4><p id="etusivuTeksti">Bottas ajoi avausosakilpailussa Australiassa kolmanneksi. Kiinan GP:ssä Bottas pyörähti turva-auton takana, ja menetti mahdollisuutensa taistella palkintopallisijoista. Maalissa Bottas oli kuudes. Bahrainissa Bottas ajoi urallaan ensimmäistä kertaa paalupaikalle, mutta itse kilpailussa putosi kolmanneksi rengaspaineongelmien vuoksi. Venäjän GP:ssä Bottas pääsi heti lähdössä kolmosruudusta kärkeen ja voitti uransa ensimmäisen F1-osakilpailun, toisen suomalaisen Kimi Räikkösen ollessa kolmas. Espanjassa Bottas osui ensimmäisessä mutkassa Räikkösen kanssa, ja joutui myöhemmin keskeyttämään kilpailun moottoririkkoon. Kanadan GP:ssä Bottas oli toinen. Bottas ajoi toiseksi myös Azerbaidžanissa, huolimatta kolareista ensimmäisessä mutkassa Vettelin kanssa ja toisessa mutkassa Räikkösen kanssa, jonka seurauksena Bottas kärsi rengasrikon sekä etusiipivaurion ja hän putosi viimeiseksi kierroksen jälkeen kärjestä. Lukuisten tapahtumien siivittämässä kilpailussa Bottas nousi viimeisillä metreillä ohi Lance Strollin toiseksi. Itävallassa Bottas ajoi paalulta erinomaisen lähdön avittamana voittoon...</p></div>\
+      	</div>\
+      </div>';
+      var bottasHTMLen =
+        '<div class="col-sm-10 p-3">\
+      	<div class = "vari">\<img src="kirjasto/ValtteriBottas/valtteri.jpg" class="profiilikuva1"/><h3>Valtteri Viktor Bottas (Born 28. August 1989 Nastola)</h3><p id="etusivuTeksti">Bottas career in Formula One began with the opening race of the season in Melbourne, Australia. Bottas immediately beat his team-mate Maldonado in the first qualifying session. Bottas finished 16th on the grid and was the best qualifier of the newcomers. In his first career F1 race, Bottas finished 14th. In Malaysia, Bottas was eliminated in the first qualifying session and finished 18th. In the race he finished 11th, just outside the points. In the Chinese GP, Bottas started from 16th on the grid and finished 13th, beating his team-mate Pastor Maldonado in the race. Bottas finished 14th in the Bahrain GP and 16th in the Spanish GP. The Monaco GP was Bottas first time at this circuit. In the race, Bottas started from 14th on the grid and was 11th in the race and close to his first career World  for the podium. At the finish Bottas was sixth. In Bahrain, Bottas took pole for the first time in his career, but dropped to third in the race itself due to tyre pressure problems. In the Russian GP, Bottas came from third on the grid to take his first career F1 race win, with another Finn, Kimi Räikkönen, third. In Spain, Bottas collided with Räikkönen at the first corner and was later forced to retire from the race due to an engine failure. In the Canadian GP, Bottas was second. Bottas also finished second in Azerbaijan, despite collisions in the first corner with Vettel and in the second corner with Räikkönen, which resulted in a puncture and front wing damage and he dropped to last after a lap from the front. In a race punctuated by a series of events, Bottas passed Lance Stroll for second place in the final metres. In Austria, Bottas drove from pole position to victory with a superb start...</p></div>\
       	</div>\
       </div>';
       var kissaHTML =
-        '<div class="col-sm-10 p-3 bg-light">\
+        '<div class="col-sm-10 p-3">\
           <div class="embed-responsive embed-responsive-16by9">\
           <iframe id="video" class="embed-responsive-item" src="kirjasto/muutkuvatjavideot/VID_20220106_142717487.mp4" style="width:1100px; height:700px" allowfullscreen></iframe>\
           </div>\
         </div>';
       var yhteystiedotHTML =
-        '<div class="col-sm-10 p-3 bg-light" style = "text-align:center;">\
-      	<div>\<h3><u>Yhteystiedot</u></h3><h4>LinkedIn</h4><p id="etusivuTeksti"><a href="https://www.linkedin.com/in/patrik-soininen-b35301207">Patrik Soininen</a></p><h4>Sähköpostiosoite</h4><p id="etusivuTeksti">2006291@edu.karelia.fi</p><h4>Puhelinnumero</h4><p id="etusivuTeksti">0400897971</p></div>\
+        '<div class="col-sm-10 p-3" style = "text-align:center;">\
+      	<div class = "vari">\<h3><u>Yhteystiedot</u></h3><h4>LinkedIn</h4><p id="etusivuTeksti"><a href="https://www.linkedin.com/in/patrik-soininen-b35301207">Patrik Soininen</a></p><h4>Sähköpostiosoite</h4><p id="etusivuTeksti">2006291@edu.karelia.fi</p><h4>Puhelinnumero</h4><p id="etusivuTeksti">0400897971</p></div>\
+      	</div>\
+      </div>';
+      var yhteystiedotHTMLen =
+        '<div class="col-sm-10 p-3" style = "text-align:center;">\
+      	<div class = "vari">\<h3><u>Contact</u></h3><h4>LinkedIn</h4><p id="etusivuTeksti"><a href="https://www.linkedin.com/in/patrik-soininen-b35301207">Patrik Soininen</a></p><h4>Email</h4><p id="etusivuTeksti">2006291@edu.karelia.fi</p><h4>Phone number</h4><p id="etusivuTeksti">0400897971</p></div>\
       	</div>\
       </div>';
 
@@ -327,22 +695,53 @@
         </div>\
         <div class="col-2">\
           <h6 class="teemaTeksti">Vaalea/Tumma teema</h6>\
-          <img\
-            class="img1"\
-            src="kirjasto/muutkuvatjavideot/linkkikuvat/darkLight1.png"\
+          <input\
+            type="image" class="img1" onClick="vaihdaTeema();"\
+            src="kirjasto/muutkuvatjavideot/linkkikuvat/darkLight4.png"\
           />\
         </div>\
         <div class="col-1">\
           <h6 id="suomiTeksti">Suomi</h6>\
-          <img\
-            class="img2"\
+          <input\
+            type="image" class="img2" onClick="vaihdaKieliSuomeksi()"\
             src="kirjasto/muutkuvatjavideot/linkkikuvat/suomi.png"\
           />\
         </div>\
         <div class="col-1">\
           <h6 id="englantiTeksti">English</h6>\
-          <img\
-            class="img3"\
+          <input\
+            type="image" class="img3" onClick="vaihdaKieliEnglanniksi()"\
+            src="kirjasto/muutkuvatjavideot/linkkikuvat/britti.png"\
+          />\
+        </div>\
+      </div>';
+
+      var laajaylapalkkiHTMLen =
+        '<div class="row bg-custom fixed-top">\
+        <div class="col-1">\
+          <button class="openbtn" onclick="openCloseNav()">&#9776;</button>\
+        </div>\
+        <div class="col-6">\
+          <h1>FINNISH F1-DRIVERS</h1>\
+        </div>\
+        <div class="col-2">\
+          <h6 class="teemaTeksti">Light/Dark theme</h6>\
+          <input\
+            type="image" class="img1" onClick="vaihdaTeema();"\
+            src="kirjasto/muutkuvatjavideot/linkkikuvat/darkLight4.png"\
+          />\
+        </div>\
+        <div class="col-1">\
+          <h6 id="suomiTeksti">Suomi</h6>\
+          <input\
+            type="image" class="img2" onClick="vaihdaKieliSuomeksi()"\
+            src="kirjasto/muutkuvatjavideot/linkkikuvat/suomi.png"\
+          />\
+        </div>\
+        <div class="col-1">\
+          <h6 id="englantiTeksti">English</h6>\
+          <input\
+            type="image" class="img3" onClick="vaihdaKieliEnglanniksi()"\
             src="kirjasto/muutkuvatjavideot/linkkikuvat/britti.png"\
           />\
         </div>\
@@ -358,21 +757,49 @@
             </div>\
             <div class="col-2">\
               <h6>Teema</h6>\
-              <img\
-                src="kirjasto/muutkuvatjavideot/linkkikuvat/darkLight1.png"\
-              style="width:100px; height:50px">\
+              <input type="image" class="img1Kapea" onClick="vaihdaTeema()"\
+                src="kirjasto/muutkuvatjavideot/linkkikuvat/darkLight4.png"\
+             >\
             </div>\
             <div class="col-1" style="margin-right:20px">\
               <h6>Suomi</h6>\
-              <img\
+              <input type="image" class="img2Kapea" onClick="vaihdaKieliSuomeksi()"\
               src="kirjasto/muutkuvatjavideot/linkkikuvat/suomi.png"\
-              style="width:100px; height:50px">\
+           >\
             </div>\
             <div class="col-1">\
               <h6>English</h6>\
-              <img\
+              <input type="image" class="img3Kapea" onClick="vaihdaKieliEnglanniksi()"\
               src="kirjasto/muutkuvatjavideot/linkkikuvat/britti.png"\
-              style="width:100px; height:50px">\
+              >\
+            </div>\
+        </div>';
+
+      var keskiylapalkkiHTMLen =
+        '<div class="row bg-custom fixed-top">\
+          <div class="col-2">\
+              <button class="openbtn" onclick="openCloseNav()">&#9776;</button>\
+            </div>\
+            <div class="col-2">\
+              <h1>F1</h1>\
+            </div>\
+            <div class="col-2">\
+              <h6>Theme</h6>\
+              <input type="image" class="img1Kapea" onClick="vaihdaTeema()"\
+                src="kirjasto/muutkuvatjavideot/linkkikuvat/darkLight4.png"\
+             >\
+            </div>\
+            <div class="col-1" style="margin-right:20px">\
+              <h6>Suomi</h6>\
+              <input type="image" class="img2Kapea" onClick="vaihdaKieliSuomeksi()"\
+              src="kirjasto/muutkuvatjavideot/linkkikuvat/suomi.png"\
+           >\
+            </div>\
+            <div class="col-1">\
+              <h6>English</h6>\
+              <input type="image" class="img3Kapea" onClick="vaihdaKieliEnglanniksi()"\
+              src="kirjasto/muutkuvatjavideot/linkkikuvat/britti.png"\
+              >\
             </div>\
         </div>';
 
@@ -383,120 +810,47 @@
             </div>\
             <div class="col-3" style="margin-right:30px">\
               <h6>Teema</h6>\
-              <img\
-                src="kirjasto/muutkuvatjavideot/linkkikuvat/darkLight1.png"\
-              style="width:100px; height:50px">\
+              <input type="image" class="img1Kapea" onClick="vaihdaTeema()"\
+                src="kirjasto/muutkuvatjavideot/linkkikuvat/darkLight4.png"\
+              >\
             </div>\
             <div class="col-1" style = "margin-right:70px">\
               <h6>Suomi</h6>\
-              <img\
+              <input type="image" class="img2Kapea" onClick="vaihdaKieliSuomeksi()"\
               src="kirjasto/muutkuvatjavideot/linkkikuvat/suomi.png"\
-              style="width:100px; height:50px">\
+              >\
             </div>\
             <div class="col-1">\
               <h6>English</h6>\
-              <img\
+              <input type="image" class="img3Kapea" onClick="vaihdaKieliEnglanniksi()"\
               src="kirjasto/muutkuvatjavideot/linkkikuvat/britti.png"\
-              style="width:100px; height:50px">\
+              >\
             </div>\
         </div>';
-
-      //otsikot
-      var paaotsikko;
-      var etusivuotsikko;
-
-      //valikko
-      var valikkoEtusivu;
-      var valikkoKissa;
-      var valikkoYhteys;
-
-      //yläpalkki
-      var palkkiTeema;
-
-      //sisällöt
-      var etuSisalto;
-
-      var leoOtsikko;
-      var leoSisalto;
-
-      var mikkoOtsikko;
-      var mikkoOtsikko1;
-      var mikkoOtsikko2;
-      var mikkoSisalto;
-      var mikkoSisalto1;
-
-      var kekeOtsikko;
-      var kekeOtsikko1;
-      var kekeOtsikko2;
-      var kekeOtsikko3;
-      var kekeSisalto;
-      var kekeSisalto1;
-      var kekeSisalto2;
-
-      var jyrkiOtsikko;
-      var jyrkiOtsikko1;
-      var jyrkiOtsikko2;
-      var jyrkiOtsikko3;
-      var jyrkiOtsikko4;
-      var jyrkiOtsikko5;
-      var jyrkiSisalto;
-      var jyrkiSisalto1;
-      var jyrkiSisalto2;
-      var jyrkiSisalto3;
-      var jyrkiSisalto4;
-      var jyrkiSisalto5;
-
-      var hakkinenOtsikko;
-      var hakkinenOtsikko1;
-      var hakkinenOtsikko2;
-      var hakkinenOtsikko3;
-      var hakkinenSisalto;
-      var hakkinenSisalto1;
-      var hakkinenSisalto2;
-
-      var saloOtsikko;
-      var saloOtsikko1;
-      var saloOtsikko2;
-      var saloOtsikko3;
-      var saloSisalto;
-      var saloSisalto1;
-      var saloSisalto2;
-
-      var kimiOtsikko;
-      var kimiOtsikko1;
-      var kimiOtsikko2;
-      var kimiOtsikko3;
-      var kimiOtsikko4;
-      var kimiOtsikko5;
-      var kimiOtsikko6;
-      var kimiSisalto;
-      var kimiSisalto1;
-      var kimiSisalto2;
-      var kimiSisalto3;
-      var kimiSisalto4;
-      var kimiSisalto5;
-
-      var heikkiOtsikko;
-      var heikkiOtsikko1;
-      var heikkiOtsikko2;
-      var heikkiOtsikko3;
-      var heikkiSisalto;
-      var heikkiSisalto1;
-      var heikkiSisalto2;
-
-      var bottasOtsikko;
-      var bottasOtsikko1;
-      var bottasOtsikko2;
-      var bottasSisalto;
-      var bottasSisalto1;
-
-      var yhteysOtsikko;
-      var yhteysOtsikko1;
-      var yhteysOtsikko2;
-      var yhteysOtsikko3;
-      var yhteysSisalto;
-      var yhteysSisalto1;
-      var yhteysSisalto2;
+      var kapeaylapalkkiHTMLen =
+        '<div class="row bg-custom fixed-top">\
+          <div class="col-2">\
+              <button class="openbtn" style="margin-top:50px" onclick="openCloseNav()">&#9776;</button>\
+            </div>\
+            <div class="col-3" style="margin-right:30px">\
+              <h6>Theme</h6>\
+              <input type="image" class="img1Kapea" onClick="vaihdaTeema()"\
+                src="kirjasto/muutkuvatjavideot/linkkikuvat/darkLight4.png"\
+              >\
+            </div>\
+            <div class="col-1" style = "margin-right:70px">\
+              <h6>Suomi</h6>\
+              <input type="image" class="img2Kapea" onClick="vaihdaKieliSuomeksi()"\
+              src="kirjasto/muutkuvatjavideot/linkkikuvat/suomi.png"\
+              >\
+            </div>\
+            <div class="col-1">\
+              <h6>English</h6>\
+              <input type="image" class="img3Kapea" onClick="vaihdaKieliEnglanniksi()"\
+              src="kirjasto/muutkuvatjavideot/linkkikuvat/britti.png"\
+              >\
+            </div>\
+        </div>';
     </script>
   </body>
 </html>

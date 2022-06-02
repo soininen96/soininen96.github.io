@@ -1,5 +1,5 @@
 body {
-  background: url("kirjasto/muutkuvatjavideot/Taustakuvat/vaalea.jpg") no-repeat
+  background: url("kirjasto/muutkuvatjavideot/Taustakuvat/tumma.jpg") no-repeat
     center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -17,19 +17,18 @@ html {
   margin-top: 200px;
   margin-left: 200px;
   margin-right: 20px;
-
   padding-bottom: 200px;
 }
 
 h1 {
-  color: rgb(0, 75, 255);
+  color: rgb(0, 94, 255);
   font-size: 4em;
   padding-top: 0.5em;
   font-style: italic;
 }
 
 h2 {
-  color: rgb(0, 75, 255);
+  color: rgb(0, 98, 255);
   font-size: 3em;
   padding-top: 0.5em;
   text-decoration: underline;
@@ -37,19 +36,22 @@ h2 {
 
 h3 {
   text-align: center;
+  color: rgb(230, 230, 230);
 }
 
 h4 {
   text-align: center;
+  color: rgb(230, 230, 230);
 }
 
 h6 {
   font-size: 1.1em;
   padding-top: 3em;
+  color: rgb(230, 230, 230);
 }
 
 p {
-  color: black;
+  color: rgb(230, 230, 230);
   font-size: 1.4em;
 }
 
@@ -62,13 +64,14 @@ p {
   width: 155px;
   height: 60px;
   opacity: 1;
+  background-color: rgb(160, 160, 160);
   border-style: outset;
   border-radius: 5%;
-  border-color: #cccccc;
+  border-color: rgb(179, 179, 179);
 }
 
 .img1:hover {
-  background-color: rgb(160, 160, 160);
+  background-color: rgb(255, 255, 255);
 }
 
 .img2 {
@@ -77,12 +80,12 @@ p {
   opacity: 1;
   border-style: outset;
   border-radius: 5%;
-  border-color: #cccccc;
+  border-color: rgb(179, 179, 179);
 }
 
 .img2:hover {
   border-radius: 10%;
-  border-color: rgba(200, 200, 200);
+  border-color: rgba(180, 180, 180);
   border-style: solid;
 }
 
@@ -92,24 +95,26 @@ p {
   opacity: 1;
   border-style: outset;
   border-radius: 5%;
-  border-color: #cccccc;
+  border-color: rgb(179, 179, 179);
 }
 
 .img3:hover {
   border-radius: 10%;
-  border-color: rgba(200, 200, 200);
+  border-color: rgba(180, 180, 180);
   border-style: solid;
 }
 
 .img1Kapea {
   width: 135px;
   height: 50px;
+  background-color: rgb(160, 160, 160);
   border-style: outset;
   border-radius: 5%;
+  border-color: rgb(179, 179, 179);
 }
 
 .img1Kapea:hover {
-  background-color: rgb(160, 160, 160);
+  background-color: rgb(255, 255, 255);
 }
 
 .img2Kapea {
@@ -117,11 +122,12 @@ p {
   height: 50px;
   border-style: outset;
   border-radius: 5%;
+  border-color: rgb(179, 179, 179);
 }
 
 .img2Kapea:hover {
   border-radius: 10%;
-  border-color: rgba(200, 200, 200);
+  border-color: rgba(180, 180, 180);
   border-style: solid;
 }
 
@@ -130,11 +136,12 @@ p {
   height: 50px;
   border-style: outset;
   border-radius: 5%;
+  border-color: rgb(179, 179, 179);
 }
 
 .img3Kapea:hover {
   border-radius: 10%;
-  border-color: rgba(200, 200, 200);
+  border-color: rgba(180, 180, 180);
   border-style: solid;
 }
 
@@ -143,8 +150,8 @@ p {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  border: 5px ridge rgb(180, 180, 180);
-  border-top: 3px ridge rgb(180, 180, 180);
+  border: 5px ridge rgb(75, 75, 75);
+  border-top: 3px ridge rgb(75, 75, 75);
   opacity: 1;
 }
 
@@ -154,8 +161,9 @@ p {
   margin-right: auto;
   width: 50%;
   margin-bottom: 20px;
-  border: 5px double black;
+  border: 5px double rgb(0, 0, 0);
   opacity: 1;
+  background-color: rgba(12, 12, 12, 0.9);
 }
 .profiilikuva1 {
   display: block;
@@ -163,18 +171,19 @@ p {
   margin-right: auto;
   width: 50%;
   margin-bottom: 20px;
-  border: 5px double black;
+  border: 5px double rgb(0, 0, 0);
   opacity: 1;
+  background-color: rgba(12, 12, 12, 0.9);
 }
 
 .bg-custom {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(12, 12, 12, 0.92);
   height: 150px;
 }
 
 .vari {
-  background-color: rgb(255, 255, 255, 0.93);
-  border-color: rgba(245, 245, 245);
+  background-color: rgba(33, 33, 33, 0.93);
+  border-color: rgba(12, 12, 12);
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   border-top-left-radius: 4px;
@@ -190,7 +199,7 @@ p {
 }
 
 .containerFluid {
-  background-image: url("kirjasto/muutkuvatjavideot/Taustakuvat/vaalea.jpg");
+  background-image: url("kirjasto/muutkuvatjavideot/Taustakuvat/tumma.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -208,7 +217,7 @@ p {
   left: 0;
   bottom: 0;
   border-top-right-radius: 5px;
-  background-color: rgb(255, 250, 250, 0.96); /* Black*/
+  background-color: rgba(13, 13, 13, 0.96); /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 15px; /* Place content 60px from the top */
   transition: 0.1s; /* 0.5 second transition effect to slide in the sidebar */
@@ -219,28 +228,28 @@ p {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 30px;
-  color: #333333;
+  color: rgb(230, 230, 230);
   display: block;
   transition: 0.3s;
 }
 
 .sidebar a:hover {
-  color: rgb(0, 75, 255);
-  background-color: rgb(210, 210, 210);
+  color: rgba(0, 94, 255);
+  background-color: rgb(30, 30, 30);
 }
 
 .openbtn {
   font-size: 50px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0);
-  color: rgb(0, 0, 0);
+  background-color: rgba(252, 252, 252, 0);
+  color: rgb(230, 230, 230);
   padding: 10px 15px;
   margin-top: 25px;
   border: none;
 }
 
 .openbtn:hover {
-  background-color: rgb(225, 225, 225);
+  background-color: rgb(31, 31, 31);
 }
 
 video {
